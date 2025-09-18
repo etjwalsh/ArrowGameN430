@@ -655,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 170095156}
   bow: {fileID: 1654459355}
+  maxArrows: 1
   powerScale: 10
   maxPower: 10
 --- !u!4 &2022964732
