@@ -9,9 +9,9 @@ public class Shooting : MonoBehaviour
 
     // private bool holding = false;
     private float power;
-    private int numArrows;
+    private int numArrows = 0;
     public int maxArrows = 1;
-    [SerializeField] private int powerScale = 10; //how much power per second builds
+    [SerializeField] private int powerScale = 100; //how much power per second builds
     [SerializeField] private int maxPower = 10; //max bow power
     private Rigidbody rbArrow;
 
@@ -29,10 +29,15 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("power = " + power);
         if (Input.GetMouseButton(0)) //holding down the arrow
         {
-            //instantiate the arrow ! 
-            Instantiate(arrow, bow.transform.position + new Vector3(1, 1, 0), bow.transform.rotation);
+            if (numArrows < maxArrows) //make sure the correct amount of arrows spawn
+            {
+                //instantiate the arrow ! 
+                Instantiate(arrow, bow.transform.position + new Vector3(0, 0, 0), bow.transform.rotation);
+                numArrows++;
+            }
             // holding = true; 
             if (power <= maxPower)
             {
