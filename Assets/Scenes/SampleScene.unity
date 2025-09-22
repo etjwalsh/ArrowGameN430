@@ -526,8 +526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a497bd1796002ca408cdca4a18c3c1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 5
-  depth: 10
 --- !u!4 &2001604980
 Transform:
   m_ObjectHideFlags: 0
@@ -576,8 +574,8 @@ MonoBehaviour:
   arrow: {fileID: 1192601378230988179, guid: e2fc04f1d2c5600469ff6213153d8f55, type: 3}
   bow: {fileID: 1141585947}
   maxArrows: 1
-  basePower: 150
-  powerScale: 10
+  basePower: 1000
+  powerScale: 20
   maxPower: 10
 --- !u!4 &2022964732
 Transform:

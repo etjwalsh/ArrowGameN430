@@ -52,9 +52,10 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
         {
-            // holding = false; 
             ShootArrow(power); //shoot the arrow
             power = 0; //reset power
+            newArrow = null; //reset the reference to the instantiated arrow
+            rbArrow = null; //reset the reference to the instantiated arrow's rigidbody
         }
     }
 
