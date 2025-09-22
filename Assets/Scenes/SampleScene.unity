@@ -420,7 +420,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2001604980}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalScale.x
@@ -436,15 +436,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 8.426441
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27
+      value: -3.9388185
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.1
+      value: -4.925278
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -452,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09774881
+      value: 0.097748816
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.09774885
+      value: 0.09774886
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -492,6 +492,58 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
   m_PrefabInstance: {fileID: 1141585946}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1141585948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41fc0604e0055d7438181d80995db41a, type: 3}
+  m_PrefabInstance: {fileID: 1141585946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2001604978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001604980}
+  - component: {fileID: 2001604979}
+  m_Layer: 0
+  m_Name: Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001604979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001604978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a497bd1796002ca408cdca4a18c3c1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 5
+  depth: 10
+--- !u!4 &2001604980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001604978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.476441, y: 4.2088184, z: -3.1747222}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1141585948}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022964730
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,9 +573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3b9b21c751d0b49871ec6d90a12de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 919132149155446097, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
+  arrow: {fileID: 1192601378230988179, guid: e2fc04f1d2c5600469ff6213153d8f55, type: 3}
   bow: {fileID: 1141585947}
   maxArrows: 1
+  basePower: 150
   powerScale: 10
   maxPower: 10
 --- !u!4 &2022964732
@@ -549,4 +602,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 218734597}
   - {fileID: 2022964732}
-  - {fileID: 1141585946}
+  - {fileID: 2001604980}
