@@ -13,18 +13,21 @@ public class Shooting : MonoBehaviour
     private float power;
     private int numArrows = 0;
     public int maxArrows = 1;
-    // [SerializeField] private int basePower = 150;
     [SerializeField] private int powerScale = 100; //how much power per second builds
     [SerializeField] private int maxPower = 10; //max bow power
     private Rigidbody rbArrow;
 
-    //variables for getting mouse position
+    //variables for raycasting
     private Ray ray;
     private RaycastHit hit;
     private Vector3 targetPoint;
+    private int layerMask;
+
 
     void Start()
     {
+        //set the layermask 
+        layerMask  = ~LayerMask.GetMask("Bow");
     }
 
     // Update is called once per frame
@@ -37,15 +40,12 @@ public class Shooting : MonoBehaviour
             {
                 if (rbArrow == null)
                 {
-                    //instantiate the arrow ! 
                     //instantiate arrow object at the bow's location + a little up, rotated -85 degrees on the z axis
-                    newArrow = Instantiate(arrow, bow.transform.position + new Vector3(0, 0.15f, 0), bow.transform.rotation * Quaternion.Euler(80, 0, -85));
+                    newArrow = Instantiate(arrow, bow.transform.position + new Vector3(0, 0.15f, 0), bow.transform.rotation * Quaternion.Euler(0, 90, 0));
                     numArrows++; // to count how many arrows have been spawned
 
                     rbArrow = newArrow.GetComponent<Rigidbody>(); //get the new arrow's rigidbody
-                    arrowScript = newArrow.GetComponent<Arrow>();
-                    Debug.Log(rbArrow);
-
+                    arrowScript = newArrow.GetComponent<Arrow>(); //get the new arrow's script
                 }
             }
             // holding = true; 
@@ -63,16 +63,15 @@ public class Shooting : MonoBehaviour
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition); //get where the mouse position is when the key is lifted up
             //cast the ray out and get the point in the distance that it hits
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 500f, layerMask))
             {
                 targetPoint = hit.point;
             }
             else //if it doesn't hit anything
             {
-                targetPoint = ray.GetPoint(1000); //target a spot 100 units down the ray
+                targetPoint = ray.GetPoint(500); //target a spot 500 units down the ray
             }
-            Debug.Log("ray is = " + ray);
-            Debug.DrawLine(rbArrow.position, targetPoint, Color.red, 2.5f);
+            Debug.DrawLine(rbArrow.position, targetPoint, Color.red, 2.5f); //for debugging purposes. These don't actually show up in game
 
             ShootArrow(power, targetPoint); //shoot the arrow
             power = 0; //reset power
@@ -86,8 +85,14 @@ public class Shooting : MonoBehaviour
         //set the arrow's bool for being destroyable 
         arrowScript.canBeDestroyed = true;
 
+        Vector3 direction = (target - rbArrow.transform.position).normalized; //get the direction from the arrow's current position to the target
+
+        rbArrow.transform.rotation = Quaternion.LookRotation(direction); //set the arrow to be facing in that direction
+
+        rbArrow.velocity = direction * p; //actually shoot the arrow
+
         //add force to the arrow based on the base power and the amount of time the arrow is held down
-        // rbArrow.MovePosition(new Vector3(target.x, target.y, target.z * p), ForceMode.Force);
+        // rbArrow.MovePosition(new Vector3(target.x, target.y, target.z * p));
         rbArrow.useGravity = true; //gives the arrow "bullet drop" 
 
         //reset all values of the arrow after it leaves the bow

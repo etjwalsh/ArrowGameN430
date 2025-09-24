@@ -5,6 +5,23 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public bool canBeDestroyed = false;
+    private Rigidbody rb;
+
+
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        if (rb.velocity.sqrMagnitude > 0.01f) // make sure it's actually moving
+        {
+            Quaternion look = Quaternion.LookRotation(rb.velocity.normalized);
+            rb.MoveRotation(look);
+        }
+    }
+
     void Update()
     {
         if (canBeDestroyed)
@@ -17,8 +34,15 @@ public class Arrow : MonoBehaviour
     {
         Debug.Log("collided with = " + collision.gameObject.name);
 
-        //in case arrows are hitting each other somehow
-        if (canBeDestroyed)
+        //make the arrow stop moving completely if it hits the ground
+        if (collision.gameObject.tag == "Ground") //will be destroyed after the self destruct coroutine ends
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        else //in case arrows are hitting each other somehow
         {
             Destroy(gameObject);
         }
@@ -26,7 +50,7 @@ public class Arrow : MonoBehaviour
 
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Debug.Log("destroying game object");
         Destroy(gameObject);
     }

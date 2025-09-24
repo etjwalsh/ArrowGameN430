@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4947626489225087207}
   - component: {fileID: 7743086397863533704}
   - component: {fileID: 3796115383700743204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e974881f1710b49a22a7b78c63276a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeDestroyed: 0
 --- !u!1001 &8930930439345324220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,23 +118,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -143,9 +144,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7795036597846715136, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
       propertyPath: m_Name
       value: Arrow2UV
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629349650924664582, guid: 2d2f84671bd935f4088f1c38446e225a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
