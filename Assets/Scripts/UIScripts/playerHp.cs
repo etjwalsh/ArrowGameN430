@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHp : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class playerHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentHp -= 10 * Time.deltaTime;
+
         redBar.fillAmount = (currentHp / maxHealth);
+
+        if (currentHp <= 0)
+        {
+            SceneManager.LoadScene("UpgradeScene");
+        }
     }
 }
