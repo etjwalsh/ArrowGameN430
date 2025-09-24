@@ -5,9 +5,6 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public bool canBeDestroyed = false;
-    void Start()
-    {
-    }
     void Update()
     {
         if (canBeDestroyed)
