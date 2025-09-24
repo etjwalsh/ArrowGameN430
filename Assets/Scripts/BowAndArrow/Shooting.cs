@@ -13,10 +13,19 @@ public class Shooting : MonoBehaviour
     private float power;
     private int numArrows = 0;
     public int maxArrows = 1;
-    [SerializeField] private int basePower = 150;
+    // [SerializeField] private int basePower = 150;
     [SerializeField] private int powerScale = 100; //how much power per second builds
     [SerializeField] private int maxPower = 10; //max bow power
     private Rigidbody rbArrow;
+
+    //variables for getting mouse position
+    private Ray ray;
+    private RaycastHit hit;
+    private Vector3 targetPoint;
+
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -52,20 +61,33 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
         {
-            ShootArrow(power); //shoot the arrow
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition); //get where the mouse position is when the key is lifted up
+            //cast the ray out and get the point in the distance that it hits
+            if (Physics.Raycast(ray, out hit))
+            {
+                targetPoint = hit.point;
+            }
+            else //if it doesn't hit anything
+            {
+                targetPoint = ray.GetPoint(1000); //target a spot 100 units down the ray
+            }
+            Debug.Log("ray is = " + ray);
+            Debug.DrawLine(rbArrow.position, targetPoint, Color.red, 2.5f);
+
+            ShootArrow(power, targetPoint); //shoot the arrow
             power = 0; //reset power
             newArrow = null; //reset the reference to the instantiated arrow
             rbArrow = null; //reset the reference to the instantiated arrow's rigidbody
         }
     }
 
-    private void ShootArrow(float p) //p is for power
+    private void ShootArrow(float p, Vector3 target) //p is for power
     {
         //set the arrow's bool for being destroyable 
         arrowScript.canBeDestroyed = true;
 
         //add force to the arrow based on the base power and the amount of time the arrow is held down
-        rbArrow.AddForce(new Vector3(0, 100, basePower * p), ForceMode.Force);
+        // rbArrow.MovePosition(new Vector3(target.x, target.y, target.z * p), ForceMode.Force);
         rbArrow.useGravity = true; //gives the arrow "bullet drop" 
 
         //reset all values of the arrow after it leaves the bow

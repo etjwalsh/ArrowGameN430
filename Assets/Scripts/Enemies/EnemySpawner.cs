@@ -11,12 +11,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Transform spawnLocation;
     private int whichEnemy = 3;
+    private bool started = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (numEnemies <= maxEnemies)
+        if (numEnemies <= maxEnemies && !started)
         {
+            started = true;
             for (int i = 0; i < maxEnemies; i++)
             {
                 StartCoroutine(SpawnEnemy());
@@ -35,7 +37,8 @@ public class EnemySpawner : MonoBehaviour
         }
         if (whichEnemy <= 2)
         {
-            Instantiate(enemies[whichEnemy], spawnLocation.position, spawnLocation.rotation); //need to add some randomness to the enemy spawn position, and also have them always face the player
+            //spawn the enemy at the index position of the enemy array
+            Instantiate(enemies[whichEnemy], spawnLocation.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), spawnLocation.rotation * Quaternion.Euler(0, 90, 0));
             whichEnemy++;
             yield return new WaitForSeconds(spawnDelay);
         }
