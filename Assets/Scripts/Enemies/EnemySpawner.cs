@@ -13,6 +13,9 @@ public class EnemySpawner : MonoBehaviour
     private int whichEnemy = 3;
     private bool started = false;
 
+
+    [SerializeField] private Queue<GameObject> enemyQueue = new Queue<GameObject>();
+
     // Update is called once per frame
     void Update()
     {
@@ -42,32 +45,5 @@ public class EnemySpawner : MonoBehaviour
             whichEnemy++;
             yield return new WaitForSeconds(spawnDelay);
         }
-
-        // switch (whichEnemy)
-        // {
-        //     case 1:
-        //         Instantiate(enemies[whichEnemy], spawnLocation.position, spawnLocation.rotation); //spawn a short target enemy
-        //         whichEnemy++;
-        //         break;
-        //     case 2:
-        //         Instantiate(targetEnemyTall, spawnLocation.position, spawnLocation.rotation); //spawn a tall target enemy
-        //         whichEnemy++;
-        //         break;
-        //     case 3:
-        //         Instantiate(batEnemy, spawnLocation.position, spawnLocation.rotation); //spawn a bat enemy
-        //         whichEnemy = 1;
-        //         break;
-
-        // }
-        // if (whichEnemy)
-        // {
-        //     Instantiate(targetEnemy, spawnLocation.position, spawnLocation.rotation); //spawn a target enemy
-        //     whichEnemy = false; //flip the bool
-        // }
-        // else
-        // {
-        //     Instantiate(targetEnemy, spawnLocation.position, spawnLocation.rotation); //spawn a bat enemy
-        //     whichEnemy = true; //flip the bool
-        // }
     }
 }
