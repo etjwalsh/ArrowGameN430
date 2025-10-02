@@ -42,6 +42,13 @@ public class Arrow : MonoBehaviour
             rb.isKinematic = true;
         }
 
+        //check if arrow hit another arrow
+        if (collision.gameObject.tag == "Arrow")
+        {
+            Debug.Log("collided with arrow");
+            // Physics.IgnoreCollision();
+        }
+
         else //in case arrows are hitting each other somehow
         {
             Destroy(gameObject);

@@ -15,6 +15,7 @@ public class Shooting : MonoBehaviour
     public int maxArrows = 1;
     [SerializeField] private int powerScale = 100; //how much power per second builds
     [SerializeField] private int maxPower = 10; //max bow power
+    [SerializeField] private float moveScale = 0.1f; //how much the bow and arrow 
     private Rigidbody rbArrow;
 
     //variables for raycasting
@@ -27,7 +28,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         //set the layermask 
-        layerMask  = ~LayerMask.GetMask("Bow");
+        layerMask = ~LayerMask.GetMask("Bow");
     }
 
     // Update is called once per frame
@@ -41,26 +42,31 @@ public class Shooting : MonoBehaviour
                 if (rbArrow == null)
                 {
                     //instantiate arrow object at the bow's location + a little up, rotated -85 degrees on the z axis
-                    newArrow = Instantiate(arrow, bow.transform.position + new Vector3(0, 0.15f, 0), bow.transform.rotation * Quaternion.Euler(0, 90, 0));
+                    newArrow = Instantiate(arrow, bow.transform.position + new Vector3(0, 0.15f, 0), bow.transform.rotation * Quaternion.Euler(0, 90, 0), bow.transform);
                     numArrows++; // to count how many arrows have been spawned
 
                     rbArrow = newArrow.GetComponent<Rigidbody>(); //get the new arrow's rigidbody
                     arrowScript = newArrow.GetComponent<Arrow>(); //get the new arrow's script
                 }
             }
-            // holding = true; 
-            if (power <= maxPower)
+            //limit power
+            if (power < maxPower)
             {
                 power += powerScale * Time.deltaTime; //build power up
+                //move the arrow back slighly
+                rbArrow.transform.position -= new Vector3(0, -(moveScale * Time.deltaTime) / 5, moveScale * Time.deltaTime);
             }
             else
             {
+                //limit power if its too high
                 power = maxPower;
             }
         }
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
         {
+            //Destroy(newArrow.GetComponent<Sway>());
+            newArrow.transform.parent = null;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition); //get where the mouse position is when the key is lifted up
             //cast the ray out and get the point in the distance that it hits
             if (Physics.Raycast(ray, out hit, 500f, layerMask))
