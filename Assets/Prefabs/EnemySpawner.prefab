@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 640733072040481427}
-  - component: {fileID: 279843056022506035}
+  - component: {fileID: 6774357188279535292}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &279843056022506035
+--- !u!114 &6774357188279535292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6064274326995089358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669c2056634eff44fa5f3f57399b4df5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bd9128dde53c1f4dbf0f4a5c9daae1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemies: 5
-  spawnDelay: 3
-  targetEnemyShort: {fileID: 8886590991867022183, guid: 6349e33a7ef594e408b009d709936881, type: 3}
-  targetEnemyTall: {fileID: 5699056882820384433, guid: cf79782191d8266488a1fb1141086093, type: 3}
-  batEnemy: {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
-  spawnLocation: {fileID: 640733072040481427}

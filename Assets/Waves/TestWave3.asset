@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222887483177e034aa2ebf3c10b894cb, type: 3}
+  m_Name: TestWave3
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+  - {fileID: 8886590991867022183, guid: 6349e33a7ef594e408b009d709936881, type: 3}
+  - {fileID: 5699056882820384433, guid: cf79782191d8266488a1fb1141086093, type: 3}
+  - {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+  - {fileID: 8886590991867022183, guid: 6349e33a7ef594e408b009d709936881, type: 3}
+  spawnBuffer: 0.5
+  waveBuffer: 2.6
+  spawnLevel: 3

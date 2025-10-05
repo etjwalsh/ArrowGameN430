@@ -46,7 +46,7 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.tag == "Arrow")
         {
             Debug.Log("collided with arrow");
-            // Physics.IgnoreCollision();
+            // Physics.IgnoreCollision(gameObject, collision, false);
         }
 
         else //in case arrows are hitting each other somehow
