@@ -21,13 +21,7 @@ public class SpawnQueue : MonoBehaviour
     private Vector3 baseSpawn2;
     private Vector3 baseSpawn3;
     private GameObject enemyToSpawn;
-
-    void Awake()
-    {
-        baseSpawn1 = new Vector3(Random.Range(-20, 20), -5, 14);
-        baseSpawn2 = new Vector3(Random.Range(-35, 35), -1.6f, 36);
-        baseSpawn3 = new Vector3(Random.Range(-30, 30), 2.8f, 66);
-    }
+    private EnemyWave thisWave;
 
     //actually spawn enemies in 
     private void Start()
@@ -46,8 +40,7 @@ public class SpawnQueue : MonoBehaviour
         }
         else //spawn queue is populated, dequeue first element
         {
-            Debug.Log("got to the dequeue of the enemy to spawn");
-            EnemyWave thisWave = enemySpawn[0]; //save current wave to a temp variable
+            thisWave = enemySpawn[0]; //save current wave to a temp variable
             enemySpawn.RemoveAt(0); //remove the wave from the list
             return thisWave; //return the wave (temp variable)
         }
@@ -57,25 +50,31 @@ public class SpawnQueue : MonoBehaviour
     {
         //get the current wave
         EnemyWave currentWave = GetWave();
-        Debug.Log("Current wave = " + currentWave);
 
         //loop through the array stored in the current wave
         for (int i = 0; i < currentWave.enemiesToSpawn.Length; i++)
         {
-            Debug.Log("got to the for loop");
-            Debug.Log("this loop will run " + currentWave.enemiesToSpawn.Length + " times");
             enemyToSpawn = currentWave.enemiesToSpawn[i]; //get reference to the enemy you're about to spawn
             //instantiate the first enemy in the array, on the certain level, at a random horizontal location
             if (currentWave.spawnLevel == 1)
             {
+                //set the random spawn spot
+                baseSpawn1 = new Vector3(Random.Range(-20, 20), -5, 14);
+                //spawn the enemy at spawn row 1
                 Instantiate(enemyToSpawn, baseSpawn1, enemyToSpawn.transform.rotation);
             }
             else if (currentWave.spawnLevel == 2)
             {
+                //set the random spawn point
+                baseSpawn2 = new Vector3(Random.Range(-35, 35), -1.6f, 36);
+                //spawn the enemy at spawn row 2
                 Instantiate(enemyToSpawn, baseSpawn2, enemyToSpawn.transform.rotation);
             }
             else if (currentWave.spawnLevel == 3)
             {
+                //set the random spawn spot
+                baseSpawn3 = new Vector3(Random.Range(-30, 30), 2.8f, 66);
+                //spawn the enemy at spawn row 3
                 Instantiate(enemyToSpawn, baseSpawn3, enemyToSpawn.transform.rotation);
             }
             else
@@ -86,23 +85,34 @@ public class SpawnQueue : MonoBehaviour
             //wait for currentWave.spawnBuffer seconds
             if (currentWave.spawnBuffer != -1) //make sure that the spawn buffer is actually set to an amount of time
             {
-                Debug.Log("about to wait for " + currentWave.spawnBuffer + " seconds");
                 yield return new WaitForSeconds(currentWave.spawnBuffer);
             }
             else
             {
                 Debug.LogError("spawnBuffer of wave " + currentWave + " is not set");
             }
+
+            Debug.Log("got end of for loop at current wave " + currentWave + " index " + i);
         }
 
+        Debug.Log("got out of the for loop and thisWave == " + thisWave);
         //take some time between waves
-        if (enemySpawn[0].waveBuffer != -1) //make sure that the wave buffer is actually set
+        if (thisWave.waveBuffer != -1) //make sure that the wave buffer is actually set
         {
-            yield return new WaitForSeconds(enemySpawn[0].waveBuffer);
+            yield return new WaitForSeconds(thisWave.waveBuffer);
         }
         else //give an error if it's not set properly
         {
-            Debug.LogError("spawnBuffer of wave " + enemySpawn[0] + " is not set");
+            Debug.LogError("spawnBuffer of wave " + thisWave + " is not set");
+        }
+
+        Debug.Log("got after the freaking one if/else thing");
+
+        //start the next wave
+        if (!thisWave.endOfSpawns) //make sure there are still waves to spawn
+        {
+            //call the next wave to spawn
+            StartCoroutine(SpawnWave());
         }
     }
 }
