@@ -92,10 +92,10 @@ public class SpawnQueue : MonoBehaviour
                 Debug.LogError("spawnBuffer of wave " + currentWave + " is not set");
             }
 
-            Debug.Log("got end of for loop at current wave " + currentWave + " index " + i);
+            // Debug.Log("got end of for loop at current wave " + currentWave + " index " + i);
         }
 
-        Debug.Log("got out of the for loop and thisWave == " + thisWave);
+        // Debug.Log("got out of the for loop and thisWave == " + thisWave);
         //take some time between waves
         if (thisWave.waveBuffer != -1) //make sure that the wave buffer is actually set
         {
@@ -106,7 +106,7 @@ public class SpawnQueue : MonoBehaviour
             Debug.LogError("spawnBuffer of wave " + thisWave + " is not set");
         }
 
-        Debug.Log("got after the freaking one if/else thing");
+        // Debug.Log("got after the freaking one if/else thing");
 
         //start the next wave
         if (!thisWave.endOfSpawns) //make sure there are still waves to spawn

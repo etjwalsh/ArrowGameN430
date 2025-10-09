@@ -12,10 +12,7 @@ public class Shooting : MonoBehaviour
     private Arrow arrowScript;
     private float power;
     private int numArrows = 0;
-    public int maxArrows = 1;
-    [SerializeField] private int powerScale = 100; //how much power per second builds
-    [SerializeField] private int maxPower = 10; //max bow power
-    [SerializeField] private float moveScale = 0.1f; //how much the bow and arrow 
+    private float moveScale = 1f; //how much the arrow moves back
     private Rigidbody rbArrow;
 
     //variables for raycasting
@@ -34,10 +31,10 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("power = " + power);
+        Debug.Log("GameManager.instance.playerHP = " + GameManager.instance.playerHealth);
         if (Input.GetMouseButton(0)) //holding down the arrow
         {
-            if (numArrows < maxArrows) //make sure the correct amount of arrows spawn
+            if (numArrows < GameManager.instance.maxArrows) //make sure the correct amount of arrows spawn
             {
                 if (rbArrow == null)
                 {
@@ -50,22 +47,21 @@ public class Shooting : MonoBehaviour
                 }
             }
             //limit power
-            if (power < maxPower)
+            if (power < GameManager.instance.maxPower)
             {
-                power += powerScale * Time.deltaTime; //build power up
+                power += GameManager.instance.powerScale * Time.deltaTime; //build power up
                 //move the arrow back slighly
                 rbArrow.transform.position -= new Vector3(0, -(moveScale * Time.deltaTime) / 5, moveScale * Time.deltaTime);
             }
             else
             {
                 //limit power if its too high
-                power = maxPower;
+                power = GameManager.instance.maxPower;
             }
         }
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
         {
-            //Destroy(newArrow.GetComponent<Sway>());
             newArrow.transform.parent = null;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition); //get where the mouse position is when the key is lifted up
             //cast the ray out and get the point in the distance that it hits

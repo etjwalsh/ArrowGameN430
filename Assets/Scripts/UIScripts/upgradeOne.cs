@@ -10,6 +10,7 @@ public class UpgradeOne : MonoBehaviour
 
     public void clicked()
     {
+        // GameManager.instance.playerHealth += 100; //<--- this was me testing how to add to the player's health. this is how you access those variables
         upgrade.GetComponent<Button>().interactable = false;
 
         string currentUpgrade = upgrade.transform.parent.gameObject.name;
@@ -25,7 +26,7 @@ public class UpgradeOne : MonoBehaviour
         GameObject nextUpgrade = GameObject.Find(nextUpgradeName);
         GameObject nextUpgradeLines = GameObject.Find(nextUpgradeLinesName);
 
-        if(nextUpgrade != null)
+        if (nextUpgrade != null)
         {
             nextUpgradeLines.transform.GetChild(0).gameObject.SetActive(true);
             nextUpgrade.transform.GetChild(0).gameObject.SetActive(true);
