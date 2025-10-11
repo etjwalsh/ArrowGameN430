@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TargetShort_Unwrapped_V3_AAA
       objectReference: {fileID: 0}
+    - target: {fileID: 5824389496788114219, guid: f5867f2fee62ea74c8c5d704f214eb39, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c2bccc860c2f06418d1a979a5beac94, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
