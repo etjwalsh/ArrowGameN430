@@ -9,6 +9,18 @@ public class upgradeScreen : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+
+        List<string> upgrades = GameManager.instance.upgrades;
+
+        foreach(string upgrade in upgrades)
+        {
+            GameObject upgradeToToggle = GameObject.Find(upgrade);
+            UpgradeOne script = upgradeToToggle.GetComponent<UpgradeOne>();
+            script.obtained = true;
+
+        }
+
+        
     }
 
     // Update is called once per frame
