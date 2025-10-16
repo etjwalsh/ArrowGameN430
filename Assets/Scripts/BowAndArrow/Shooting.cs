@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Formats.Alembic.Importer;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject arrow;
     [SerializeField] private GameObject bow;
+
+    public AlembicStreamPlayer ASP;
 
     private GameObject newArrow;
     private Arrow arrowScript;
@@ -26,12 +30,15 @@ public class Shooting : MonoBehaviour
     {
         //set the layermask 
         layerMask = ~LayerMask.GetMask("Bow");
+
+        //get reference to alembic stream player
+        ASP = bow.GetComponent<AlembicStreamPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("GameManager.instance.playerHP = " + GameManager.instance.playerHealth);
+        // Debug.Log("power is = " + power);
         if (Input.GetMouseButton(0)) //holding down the arrow
         {
             if (numArrows < GameManager.instance.maxArrows) //make sure the correct amount of arrows spawn
@@ -52,12 +59,31 @@ public class Shooting : MonoBehaviour
                 power += GameManager.instance.powerScale * Time.deltaTime; //build power up
                 //move the arrow back slighly
                 rbArrow.transform.position -= new Vector3(0, -(moveScale * Time.deltaTime) / 5, moveScale * Time.deltaTime);
+
+                //increase time of alembic player
+                if (ASP.CurrentTime < 0.3f)
+                {
+                    ASP.CurrentTime += power * Time.deltaTime / 5;
+                }
+                else if (ASP.CurrentTime > 0.3f && ASP.CurrentTime < 0.7f)
+                {
+                    ASP.CurrentTime += power * Time.deltaTime / 25;
+                }
+                else
+                {
+                    ASP.CurrentTime += power * Time.deltaTime / 50;
+                }
             }
             else
             {
                 //limit power if its too high
                 power = GameManager.instance.maxPower;
+                //set alembic player to the end of the animation
+                ASP.CurrentTime = ASP.EndTime;
             }
+
+            //set this arrow's damage amount
+            arrowScript.damage = Mathf.RoundToInt(power);
         }
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
@@ -79,6 +105,9 @@ public class Shooting : MonoBehaviour
             power = 0; //reset power
             newArrow = null; //reset the reference to the instantiated arrow
             rbArrow = null; //reset the reference to the instantiated arrow's rigidbody
+
+            //reset animation
+            ASP.CurrentTime = ASP.StartTime;
         }
     }
 

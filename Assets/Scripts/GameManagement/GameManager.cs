@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         //set instance of state machine and make sure one doesn't already exist
         if (instance != null)
         {
-            Debug.LogWarning("warning: too many instances of game state machine");
+            Debug.LogWarning("warning: too many instances of GameManager");
             Destroy(gameObject);
             return;
         }
