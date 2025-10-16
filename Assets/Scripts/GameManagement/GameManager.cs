@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int maxArrows = 1; //how many arrows the player can shoot at once
     public int powerScale = 200; //how quickly the arrow draws back
     public int maxPower = 100; //max bow power
+    public List<string> upgrades = new();
 
     //singleton pattern
     private static GameManager _instance;
