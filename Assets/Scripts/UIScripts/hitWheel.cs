@@ -8,7 +8,8 @@ public class hitWheel : MonoBehaviour
     private float hitTime;
     [SerializeField] private float hitTimer;
     [SerializeField] private Image greenWheel;
-    [SerializeField] private int maxTime = 20;
+    [SerializeField] private int maxTime;
+    [SerializeField] private int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,13 @@ public class hitWheel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if the timer ran out / ended
         if (hitTime >= hitTimer)
         {
+            //hit the player for damage amount
+            GameManager.instance.playerHealth -= damage;
+
+            //reset the timer
             hitTime = 0;
         }
         else

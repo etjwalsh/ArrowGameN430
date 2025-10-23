@@ -7,7 +7,7 @@ public class playButton : MonoBehaviour
 {
     public void play()
     {
-        print("hello");
+        GameManager.instance.playerHealth = GameManager.instance.maxPlayerHealth;
         SceneManager.LoadScene("SampleScene");
     }
 }

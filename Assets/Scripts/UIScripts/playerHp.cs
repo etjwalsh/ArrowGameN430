@@ -14,20 +14,13 @@ public class playerHp : MonoBehaviour
     void Start()
     {
         //declare variables depending on what upgrades the player has used
-        maxHealth = GameManager.instance.playerHealth;
-        currentHp = GameManager.instance.playerHealth;
+        maxHealth = GameManager.instance.maxPlayerHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentHp -= 10 * Time.deltaTime;
-
-        redBar.fillAmount = (currentHp / maxHealth);
-
-        if (currentHp <= 0)
-        {
-            SceneManager.LoadScene("UpgradeScene");
-        }
+        currentHp = GameManager.instance.playerHealth;
+        redBar.fillAmount = currentHp / maxHealth;
     }
 }
