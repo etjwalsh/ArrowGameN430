@@ -50,8 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3af8159799b26d45b7c0906cd1f96fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTimer: 300
+  hitTimer: 3
   greenWheel: {fileID: 4894415751724151702}
+  maxTime: 1
 --- !u!1 &1492860245919379394
 GameObject:
   m_ObjectHideFlags: 0

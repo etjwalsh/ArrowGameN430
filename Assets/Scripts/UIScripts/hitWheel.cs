@@ -8,6 +8,7 @@ public class hitWheel : MonoBehaviour
     private float hitTime;
     [SerializeField] private float hitTimer;
     [SerializeField] private Image greenWheel;
+    [SerializeField] private int maxTime = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,14 @@ public class hitWheel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (hitTime >= hitTimer)
         {
             hitTime = 0;
         }
         else
         {
-            hitTime += 20 * Time.deltaTime;
+            hitTime += maxTime * Time.deltaTime;
         }
-        greenWheel.fillAmount = (hitTime / hitTimer);
+        greenWheel.fillAmount = hitTime / hitTimer;
     }
 }

@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hitTimerWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: hitTimer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
