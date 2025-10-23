@@ -12,6 +12,7 @@ public class UpgradeOne : MonoBehaviour
     public Button upgrade;
 
     public bool obtained = false;
+    public bool off = false;
     string currentUpgrade;
 
     void Start()
@@ -30,7 +31,8 @@ public class UpgradeOne : MonoBehaviour
 
     public void Update()
     {
-        if(obtained){
+
+        if(obtained && !off){
             upgrade.GetComponent<Button>().interactable = false;
 
             string currentUpgradeNumberText = currentUpgrade.Replace("Upgrade", "");
@@ -49,10 +51,12 @@ public class UpgradeOne : MonoBehaviour
 
 
                 print(nextUpgradeName + " activated!");
+                off = true;
             }
             else
             {
                 print(nextUpgradeName + " not found!");
+                off = true;
             }
         }
     }
