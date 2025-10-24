@@ -611,10 +611,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
+  maxPlayerHealth: 100
   playerDamage: 10
   maxArrows: 1
   powerScale: 200
   maxPower: 100
+  upgrades: []
 --- !u!4 &932749179
 Transform:
   m_ObjectHideFlags: 0
@@ -1231,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -4548291671802699370, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de4c59830fbc69c4d9532a0dfbde97c4, type: 2}
     - target: {fileID: -3178989621408373364, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1239,13 +1245,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -750752117898469877, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de4c59830fbc69c4d9532a0dfbde97c4, type: 2}
     - target: {fileID: 2730118079680369489, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3434499245781501790, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
       propertyPath: endTime
-      value: 1.125
+      value: 1.0416666
       objectReference: {fileID: 0}
     - target: {fileID: 3434499245781501790, guid: e680b6347656d684d82ec044b91e7f91, type: 3}
       propertyPath: startTime
