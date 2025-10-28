@@ -816,7 +816,7 @@ MonoBehaviour:
   powerScale: 200
   maxPower: 100
   playerCoins: 0
-  coinMult: 0
+  coinMult: 1
   upgrades: []
 --- !u!4 &932749179
 Transform:
