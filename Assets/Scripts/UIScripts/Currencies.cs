@@ -12,12 +12,13 @@ public class Currencies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coins = GameManager.instance.playerCoins;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        coins = GameManager.instance.playerCoins;
         curText.text = "Coins: " + coins.ToString();
     }
 }

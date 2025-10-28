@@ -18,6 +18,7 @@ public class UpgradeOne : MonoBehaviour
     [SerializeField] private List<GameObject> nextUpgrades = new List<GameObject>();
     [SerializeField] private GameObject upgradeLines;
     [SerializeField] private UnityEvent upgradeEffect;
+    [SerializeField] private float cost;
     public bool obtained = false;
     public bool off = false;
     string currentUpgrade;
@@ -29,12 +30,17 @@ public class UpgradeOne : MonoBehaviour
 
     public void clicked()
     {
+        if(GameManager.instance.playerCoins >= cost)
+        {
+            //money!
+            GameManager.instance.playerCoins -= cost;
+
+            //sets upgrade to obtained, and pushes the effects
+            obtained = true;
+            GameManager.instance.upgrades.Add(currentUpgrade);
+            upgradeEffect.Invoke();
+        }
         //GameManager.instance.playerHealth += 100; //<--- this was me testing how to add to the player's health. this is how you access those variables
-        obtained = true;
-
-        GameManager.instance.upgrades.Add(currentUpgrade);
-        upgradeEffect.Invoke();
-
     }
 
     public void Update()

@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
     public int maxArrows = 1; //how many arrows the player can shoot at once
     public int powerScale = 200; //how quickly the arrow draws back
     public float maxPower = 100; //max bow power
-    public float playerCoins = 0; //max bow power
-    public float coinMult = 0; //max bow power
+    public float playerCoins = 0; //Coins
+    public float coinMult = 1; //coin mult from upgrades
     public List<string> upgrades = new(); //list for upgrade names
 
     //singleton pattern
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     }
 
 //adds coins with allowance for the global mult
-    public void addCoins(int amount)
+    public void addCoins(float amount)
     {
         playerCoins += amount * coinMult;
     } 

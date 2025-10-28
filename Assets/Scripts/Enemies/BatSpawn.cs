@@ -6,7 +6,7 @@ using UnityEngine;
 public class BatSpawn : MonoBehaviour
 {
     public Arrow arrowScript;
-    public int value;
+    public float value;
     public float batHP = 200;
     public float batMaxHP = 200;
     public float hpPercent;
