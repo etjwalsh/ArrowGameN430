@@ -181,6 +181,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &40755439
@@ -372,6 +373,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &53381855
@@ -850,8 +852,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 396.3423, y: 0}
+  m_SizeDelta: {x: 92.6846, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256581371
 MonoBehaviour:
@@ -2351,6 +2353,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &819971003
@@ -2687,6 +2690,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  cost: 10
   obtained: 0
   off: 0
 --- !u!1 &1096876389
@@ -2923,7 +2927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 1 Placeholder
+  m_text: Atk Up 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3106,6 +3110,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1251699341
@@ -3454,7 +3459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 2 Placeholder
+  m_text: Atk Up 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3588,6 +3593,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1445983154
@@ -3945,6 +3951,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1525306926
@@ -4311,6 +4318,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1619974976
@@ -4368,6 +4376,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1624010379
@@ -4979,7 +4988,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 2 Placeholder
+  m_text: 'Atk Up 2
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5111,6 +5122,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1870241078
@@ -5170,7 +5182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 2 Placeholder
+  m_text: Atk Spd Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5591,6 +5603,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &1977954214
@@ -5929,7 +5942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade 2 Placeholder
+  m_text: Arrow Velocity Up 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6357,6 +6370,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1 &2046599112
@@ -6771,6 +6785,7 @@ MonoBehaviour:
   upgradeEffect:
     m_PersistentCalls:
       m_Calls: []
+  cost: 0
   obtained: 0
   off: 0
 --- !u!1660057539 &9223372036854775807
