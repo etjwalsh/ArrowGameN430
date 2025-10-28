@@ -1,23 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class hpBar : MonoBehaviour
+public class upgradeHider : MonoBehaviour
 {
-
-    [SerializeField] public float currentHp;
-    [SerializeField] private Image greenBar;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        greenBar.fillAmount = currentHp;
+        
     }
 }

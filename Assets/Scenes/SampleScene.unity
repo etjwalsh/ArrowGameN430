@@ -811,10 +811,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 100
   maxPlayerHealth: 100
-  playerDamage: 10
+  playerDamage: 100
   maxArrows: 1
   powerScale: 200
   maxPower: 100
+  playerCoins: 0
+  coinMult: 0
   upgrades: []
 --- !u!4 &932749179
 Transform:

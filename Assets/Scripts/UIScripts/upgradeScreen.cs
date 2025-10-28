@@ -12,7 +12,7 @@ public class upgradeScreen : MonoBehaviour
 
         List<string> upgrades = GameManager.instance.upgrades;
 
-        foreach(string upgrade in upgrades)
+        foreach (string upgrade in upgrades)
         {
             GameObject upgradeToToggle = GameObject.Find(upgrade);
             UpgradeOne script = upgradeToToggle.GetComponent<UpgradeOne>();
@@ -20,7 +20,13 @@ public class upgradeScreen : MonoBehaviour
 
         }
 
-        
+
+    }
+    
+    public void dmgUpgrade(float amount)
+    {
+        print(amount);
+        GameManager.instance.playerDamage += amount;
     }
 
     // Update is called once per frame

@@ -6,7 +6,7 @@ public class Arrow : MonoBehaviour
 {
     public bool canBeDestroyed = false;
     private Rigidbody rb;
-    public int damage = 0;
+    public float damage = 0;
 
     private void Start()
     {

@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Linq;
 using System;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class UpgradeOne : MonoBehaviour
 {
+    //Current upgrade
     public Button upgrade;
 
+    //list of upgrades this will open up
+    [SerializeField] private List<GameObject> nextUpgrades = new List<GameObject>();
+    [SerializeField] private GameObject upgradeLines;
+    [SerializeField] private UnityEvent upgradeEffect;
     public bool obtained = false;
     public bool off = false;
     string currentUpgrade;
@@ -26,38 +33,26 @@ public class UpgradeOne : MonoBehaviour
         obtained = true;
 
         GameManager.instance.upgrades.Add(currentUpgrade);
+        upgradeEffect.Invoke();
 
     }
 
     public void Update()
     {
-
-        if(obtained && !off){
+        if(obtained && !off)
+        {
             upgrade.GetComponent<Button>().interactable = false;
-
-            string currentUpgradeNumberText = currentUpgrade.Replace("Upgrade", "");
-            int currentUpgradeNumber = int.Parse(currentUpgradeNumberText);
-            currentUpgradeNumber += 1;
-            string nextUpgradeName = "Upgrade" + currentUpgradeNumber;
-            string nextUpgradeLinesName = "Upgrade" + currentUpgradeNumber + "Lines";
-
-            GameObject nextUpgrade = GameObject.Find(nextUpgradeName);
-            GameObject nextUpgradeLines = GameObject.Find(nextUpgradeLinesName);
-
-            if (nextUpgrade != null)
+            off = true;
+            if (nextUpgrades != null)
             {
-                nextUpgradeLines.transform.GetChild(0).gameObject.SetActive(true);
-                nextUpgrade.transform.GetChild(0).gameObject.SetActive(true);
-
-
-                print(nextUpgradeName + " activated!");
-                off = true;
+                foreach (GameObject nextUpgrade in nextUpgrades)
+                {
+                    nextUpgrade.transform.Find("Button").gameObject.SetActive(true);
+                }
             }
-            else
-            {
-                print(nextUpgradeName + " not found!");
-                off = true;
-            }
-        }
+            
+            if (upgradeLines != null)
+            upgradeLines.SetActive(true);
+        } 
     }
 }

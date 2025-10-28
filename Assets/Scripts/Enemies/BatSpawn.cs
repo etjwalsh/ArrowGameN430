@@ -6,7 +6,11 @@ using UnityEngine;
 public class BatSpawn : MonoBehaviour
 {
     public Arrow arrowScript;
-    public int batHP = 200;
+    public int value;
+    public float batHP = 200;
+    public float batMaxHP = 200;
+    public float hpPercent;
+    [SerializeField] private hpBar healthDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,7 @@ public class BatSpawn : MonoBehaviour
         if (batHP <= 0)
         {
             Destroy(gameObject);
+            GameManager.instance.addCoins(value);
         }
     }
 
@@ -34,6 +39,10 @@ public class BatSpawn : MonoBehaviour
             //make the bat take damage
             batHP -= arrowScript.damage;
 
+
+            hpPercent = (batHP / batMaxHP);
+            healthDisplay.currentHp = hpPercent;
+            
             Debug.Log("bat health is now " + batHP);
         }
     }

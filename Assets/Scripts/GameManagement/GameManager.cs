@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,12 @@ public class GameManager : MonoBehaviour
     //these will be the stats that the upgrades mess with
     public int playerHealth = 100; //how much HP the player has
     public int maxPlayerHealth = 100; //max amount of HP the player can have
-    public int playerDamage = 10; //how much damage the player does
+    public float playerDamage = 100; //how much damage the player does
     public int maxArrows = 1; //how many arrows the player can shoot at once
     public int powerScale = 200; //how quickly the arrow draws back
-    public int maxPower = 100; //max bow power
+    public float maxPower = 100; //max bow power
+    public float playerCoins = 0; //max bow power
+    public float coinMult = 0; //max bow power
     public List<string> upgrades = new(); //list for upgrade names
 
     //singleton pattern
@@ -51,6 +54,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            playerHealth = 0;
+        }
         //move to the upgrade scene when the player dies
         if (playerHealth <= 0)
         {
@@ -59,4 +66,10 @@ public class GameManager : MonoBehaviour
             playerHealth = maxPlayerHealth;
         }
     }
+
+//adds coins with allowance for the global mult
+    public void addCoins(int amount)
+    {
+        playerCoins += amount * coinMult;
+    } 
 }

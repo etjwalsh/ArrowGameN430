@@ -82,8 +82,8 @@ public class Shooting : MonoBehaviour
                 ASP.CurrentTime = ASP.EndTime;
             }
 
-            //set this arrow's damage amount
-            arrowScript.damage = Mathf.RoundToInt(power);
+            //set this arrow's damage amount by mutliplying the powermodifier by player dmg, ie. a half charged shot will do 50% of the expected dmg
+            arrowScript.damage = GameManager.instance.playerDamage*(power/100);
         }
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow
