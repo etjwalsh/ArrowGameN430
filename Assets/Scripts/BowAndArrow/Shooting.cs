@@ -56,7 +56,7 @@ public class Shooting : MonoBehaviour
             //limit power
             if (power < GameManager.instance.maxPower)
             {
-                power += GameManager.instance.powerScale * Time.deltaTime; //build power up
+                power += (GameManager.instance.powerScale * (GameManager.instance.maxPower*2)) * Time.deltaTime; //build power up
                 //move the arrow back slighly
                 rbArrow.transform.position -= new Vector3(0, -(moveScale * Time.deltaTime) / 5, moveScale * Time.deltaTime);
 
