@@ -29,6 +29,11 @@ public class upgradeScreen : MonoBehaviour
         GameManager.instance.playerDamage += amount;
     }
 
+    public void hpUpgrade(float amount)
+    {
+        print(amount);
+        GameManager.instance.playerHealth += amount;
+    }
     // Update is called once per frame
     void Update()
     {

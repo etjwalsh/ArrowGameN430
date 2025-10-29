@@ -8,14 +8,15 @@ public class GameManager : MonoBehaviour
 {
     //keeps track of the main stats for the game
     //these will be the stats that the upgrades mess with
-    public int playerHealth = 100; //how much HP the player has
-    public int maxPlayerHealth = 100; //max amount of HP the player can have
+    public float playerHealth = 100; //how much HP the player has
+    public float maxPlayerHealth = 100; //max amount of HP the player can have
     public float playerDamage = 100; //how much damage the player does
     public int maxArrows = 1; //how many arrows the player can shoot at once
     public int powerScale = 200; //how quickly the arrow draws back
     public float maxPower = 100; //max bow power
     public float playerCoins = 0; //Coins
     public float coinMult = 1; //coin mult from upgrades
+    public float moreCoins = 0;
     public List<string> upgrades = new(); //list for upgrade names
 
     //singleton pattern
@@ -67,9 +68,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-//adds coins with allowance for the global mult
+//adds coins with allowance for the global mult, then adds any addative coin amounts
     public void addCoins(float amount)
     {
-        playerCoins += amount * coinMult;
+        playerCoins += (amount * coinMult) + moreCoins;
     } 
 }
