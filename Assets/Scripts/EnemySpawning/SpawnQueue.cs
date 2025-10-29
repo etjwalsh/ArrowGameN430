@@ -59,21 +59,21 @@ public class SpawnQueue : MonoBehaviour
             if (currentWave.spawnLevel == 1)
             {
                 //set the random spawn spot
-                baseSpawn1 = new Vector3(Random.Range(-20, 20), -5, 14);
+                baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
                 //spawn the enemy at spawn row 1
                 Instantiate(enemyToSpawn, baseSpawn1, enemyToSpawn.transform.rotation);
             }
             else if (currentWave.spawnLevel == 2)
             {
                 //set the random spawn point
-                baseSpawn2 = new Vector3(Random.Range(-35, 35), -1.6f, 36);
+                baseSpawn2 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
                 //spawn the enemy at spawn row 2
                 Instantiate(enemyToSpawn, baseSpawn2, enemyToSpawn.transform.rotation);
             }
             else if (currentWave.spawnLevel == 3)
             {
                 //set the random spawn spot
-                baseSpawn3 = new Vector3(Random.Range(-30, 30), 2.8f, 66);
+                baseSpawn3 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
                 //spawn the enemy at spawn row 3
                 Instantiate(enemyToSpawn, baseSpawn3, enemyToSpawn.transform.rotation);
             }

@@ -40,7 +40,7 @@ public class BatSpawn : MonoBehaviour
             batHP -= arrowScript.damage;
 
 
-            hpPercent = (batHP / batMaxHP);
+            hpPercent = batHP / batMaxHP;
             healthDisplay.currentHp = hpPercent;
             
             Debug.Log("bat health is now " + batHP);
