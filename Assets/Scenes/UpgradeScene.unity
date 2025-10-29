@@ -180,8 +180,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 1355986504}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: dmgUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 100
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 100
   obtained: 0
   off: 0
 --- !u!1 &40755439
@@ -2234,8 +2246,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 0}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: atkSpdUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 400
   obtained: 0
   off: 0
 --- !u!1 &819971003
@@ -2643,7 +2667,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 100
+          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -3939,8 +3963,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 1214894870}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: coinAddUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 100
   obtained: 0
   off: 0
 --- !u!1 &1525306926
@@ -4306,8 +4342,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 256581369}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: hpUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 100
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 100
   obtained: 0
   off: 0
 --- !u!1 &1619974976
@@ -4364,8 +4412,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 0}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: dmgUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 250
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 1000
   obtained: 0
   off: 0
 --- !u!1 &1624010379
@@ -4856,8 +4916,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 0}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: hpUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 150
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 250
   obtained: 0
   off: 0
 --- !u!1 &1903703408
@@ -5203,8 +5275,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 0}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: coinAddUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 15
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 550
   obtained: 0
   off: 0
 --- !u!1 &1975235316
@@ -5911,8 +5995,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 0}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: atkVeloUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 350
   obtained: 0
   off: 0
 --- !u!1 &2046599112
@@ -6192,8 +6288,20 @@ MonoBehaviour:
   upgradeLines: {fileID: 819971003}
   upgradeEffect:
     m_PersistentCalls:
-      m_Calls: []
-  cost: 0
+      m_Calls:
+      - m_Target: {fileID: 960683752}
+        m_TargetAssemblyTypeName: upgradeScreen, Assembly-CSharp
+        m_MethodName: hpUpgrade
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 50
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cost: 25
   obtained: 0
   off: 0
 --- !u!1660057539 &9223372036854775807
