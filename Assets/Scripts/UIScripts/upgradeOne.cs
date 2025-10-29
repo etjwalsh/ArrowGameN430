@@ -9,7 +9,8 @@ using System;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 
-public class UpgradeOne : MonoBehaviour
+public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+
 {
     //Current upgrade
     public Button upgrade;
@@ -19,6 +20,11 @@ public class UpgradeOne : MonoBehaviour
     [SerializeField] private GameObject upgradeLines;
     [SerializeField] private UnityEvent upgradeEffect;
     [SerializeField] private float cost;
+
+    [Header("Tooltip Content")]
+    [SerializeField] private string title;
+    [SerializeField] private string description;
+
     public bool obtained = false;
     public bool off = false;
     string currentUpgrade;
@@ -42,10 +48,38 @@ public class UpgradeOne : MonoBehaviour
         }
         //GameManager.instance.playerHealth += 100; //<--- this was me testing how to add to the player's health. this is how you access those variables
     }
+    public void OnPointerEnter(PointerEventData pointerEventData)
 
+    {
+
+        tooltipManager._instance.SetandShow(title,description,cost);
+
+    }
+
+
+
+    public void OnPointerExit(PointerEventData pointerEventData)
+
+    {
+
+        tooltipManager._instance.hideTool();
+
+    }
+
+
+    // private void OnPointerEnter()
+    // {
+    //     print("mouse enetr");
+    //     tooltipManager._instance.SetandShow(upgradeText);
+    // }
+
+    // private void OnMouseExit()
+    // {
+    //     tooltipManager._instance.hideTool();
+    // }
     public void Update()
     {
-        if(obtained && !off)
+        if (obtained && !off)
         {
             upgrade.GetComponent<Button>().interactable = false;
             off = true;
@@ -56,9 +90,9 @@ public class UpgradeOne : MonoBehaviour
                     nextUpgrade.transform.Find("Button").gameObject.SetActive(true);
                 }
             }
-            
+
             if (upgradeLines != null)
-            upgradeLines.SetActive(true);
-        } 
+                upgradeLines.SetActive(true);
+        }
     }
 }
