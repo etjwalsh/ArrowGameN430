@@ -32,7 +32,7 @@ public class upgradeScreen : MonoBehaviour
     public void hpUpgrade(float amount)
     {
         print(amount);
-        GameManager.instance.playerHealth += amount;
+        GameManager.instance.maxPlayerHealth += amount;
     }
 
     public void coinAddUpgrade(float amount)
@@ -46,7 +46,7 @@ public class upgradeScreen : MonoBehaviour
         print(amount);
 
         //need to implement elsewhere
-        GameManager.instance.playerHealth += amount;
+        GameManager.instance.powerScale += amount;
     }
 
     public void atkVeloUpgrade(float amount)
@@ -54,7 +54,7 @@ public class upgradeScreen : MonoBehaviour
         print(amount);
 
         //need to implement elsewhere
-        GameManager.instance.playerHealth += amount;
+        GameManager.instance.maxPower += amount;
     }
     // Update is called once per frame
     void Update()

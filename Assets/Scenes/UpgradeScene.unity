@@ -502,6 +502,14 @@ PrefabInstance:
       value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: title
+      value: Arrow Velocity Up I
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: description
+      value: Increases arrow velocity by 20%
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeLines
       value: 
       objectReference: {fileID: 0}
@@ -519,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8393347938801393057, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1676,6 +1684,14 @@ PrefabInstance:
       value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: title
+      value: Atk Speed Up I
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: description
+      value: Increases bow attack speed by 10%
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeLines
       value: 
       objectReference: {fileID: 0}
@@ -1693,7 +1709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8393347938801393057, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: m_AnchoredPosition.x
