@@ -23,7 +23,7 @@ public class tooltipManager : MonoBehaviour
     }
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,13 +35,13 @@ public class tooltipManager : MonoBehaviour
 
     public void SetandShow(string name, string description, float cost)
     {
-        gameObject.SetActive(true);
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
         textComp.text = name + "\n" + description + "\n" + "Cost: " +cost.ToString();
     }
     
     public void hideTool ()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         textComp.text = string.Empty;
     }
 }

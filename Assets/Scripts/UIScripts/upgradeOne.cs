@@ -21,7 +21,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private UnityEvent upgradeEffect;
     [SerializeField] private float cost;
 
-    [Header("Tooltip Content")]
+    [Header("Tooltip")]
     [SerializeField] private string title;
     [SerializeField] private string description;
 
@@ -65,7 +65,6 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         tooltipManager._instance.hideTool();
 
     }
-
 
     // private void OnPointerEnter()
     // {
