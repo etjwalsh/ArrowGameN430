@@ -59,6 +59,10 @@ public class GameManager : MonoBehaviour
         {
             playerHealth = 0;
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            playerCoins += 100;
+        }
         //move to the upgrade scene when the player dies
         if (playerHealth <= 0)
         {
