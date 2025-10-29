@@ -25,8 +25,8 @@ public class BatSpawn : MonoBehaviour
         // Debug.Log("gamemanager instance maxPower = " + GameManager.instance.maxPower);
         if (batHP <= 0)
         {
-            Destroy(gameObject);
             GameManager.instance.addCoins(value);
+            Destroy(gameObject);
         }
     }
 
@@ -42,7 +42,7 @@ public class BatSpawn : MonoBehaviour
 
             hpPercent = batHP / batMaxHP;
             healthDisplay.currentHp = hpPercent;
-            
+
             Debug.Log("bat health is now " + batHP);
         }
     }

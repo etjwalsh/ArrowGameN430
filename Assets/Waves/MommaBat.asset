@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222887483177e034aa2ebf3c10b894cb, type: 3}
+  m_Name: MommaBat
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - {fileID: 3711522704980187760, guid: e1b7909274e133247b8f824e184f0b23, type: 3}
+  spawnBuffer: 0
+  waveBuffer: 30
+  spawnLevel: 3
+  endOfSpawns: 1

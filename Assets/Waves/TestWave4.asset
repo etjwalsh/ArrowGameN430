@@ -20,4 +20,4 @@ MonoBehaviour:
   spawnBuffer: 1.5
   waveBuffer: 3
   spawnLevel: 2
-  endOfSpawns: 1
+  endOfSpawns: 0
