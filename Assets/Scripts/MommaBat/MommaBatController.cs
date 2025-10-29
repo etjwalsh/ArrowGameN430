@@ -7,8 +7,8 @@ public class MommaBatController : MonoBehaviour
 {
     public Arrow arrowScript;
     public float value;
-    public float batHP = 200;
-    public float batMaxHP = 200;
+    public float batHP = 3;
+    public float batMaxHP = 3;
     public float hpPercent;
     [SerializeField] private hpBar healthDisplay;
     private Vector3 targetPosition;
@@ -47,9 +47,9 @@ public class MommaBatController : MonoBehaviour
             //get reference to this arrow script
             arrowScript = collision.gameObject.GetComponent<Arrow>();
             //make the bat take damage
-            batHP -= arrowScript.damage;
+            batHP -= 1;
 
-
+            //update health bar UI
             hpPercent = batHP / batMaxHP;
             healthDisplay.currentHp = hpPercent;
 
