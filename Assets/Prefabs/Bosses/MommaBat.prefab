@@ -157,7 +157,8 @@ MonoBehaviour:
   batMaxHP: 3
   hpPercent: 0
   healthDisplay: {fileID: 5853543825536713113}
-  flyInDuration: 5
+  flyInDuration: 10
+  bat: {fileID: 0}
 --- !u!136 &7491663014111430189
 CapsuleCollider:
   m_ObjectHideFlags: 0

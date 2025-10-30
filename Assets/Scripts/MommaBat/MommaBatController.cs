@@ -5,21 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class MommaBatController : MonoBehaviour
 {
+    //stats and other stuff
     public Arrow arrowScript;
     public float value;
     public float batHP = 3;
     public float batMaxHP = 3;
     public float hpPercent;
     [SerializeField] private hpBar healthDisplay;
+    private bool canBeHit = false;
+
+    //for flying in
     private Vector3 targetPosition;
-    public float flyInDuration = 5.0f;
+    public float flyInDuration = 10.0f;
+
+    //for bat children
+    [SerializeField] private GameObject bat;
+    private int numBats;
 
     // Start is called before the first frame update
     void Start()
     {
         targetPosition = new Vector3(35, 30, 50);
         Vector3 pos = this.transform.position;
-        pos = new Vector3(35, 200, 100);
+        pos = new Vector3(35, 90, 450);
         this.transform.position = pos;
 
         StartCoroutine(FlyIn());
@@ -28,6 +36,21 @@ public class MommaBatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if all the bats are dead
+        if (numBats == 0)
+        {
+            canBeHit = true;
+        }
+        else if (numBats < 0)
+        {
+
+        }
+        else
+        {
+            //set the number of bats to however many children the mamma bat has
+            numBats = gameObject.transform.childCount;
+        }
+
         if (batHP <= 0)
         {
             //eventually make this so that it starts some sort of end sequence coroutine probably
@@ -42,8 +65,12 @@ public class MommaBatController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Arrow(Clone)")
+        //check to make sure the mamma got hit by an arrow and can actually be hit
+        if (collision.gameObject.name == "Arrow(Clone)" && canBeHit)
         {
+            //can't hit it multiple times in a row
+            canBeHit = false;
+
             //get reference to this arrow script
             arrowScript = collision.gameObject.GetComponent<Arrow>();
             //make the bat take damage
@@ -67,10 +94,18 @@ public class MommaBatController : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / flyInDuration);
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, Mathf.SmoothStep(0.0f, 1.0f, t));
             yield return null;
         }
 
         transform.position = targetPosition; // snap exactly to target
+    }
+
+    IEnumerator SpawnChildren()
+    {
+        //instantiate bats as children of the momma bat
+        Instantiate(bat, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+        numBats++;
+        yield return null;
     }
 }

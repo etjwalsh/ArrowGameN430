@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Formats.Alembic.Importer;
 
 public class BatSpawn : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class BatSpawn : MonoBehaviour
     void Start()
     {
         Vector3 pos = this.transform.position;
-        pos.y += Random.Range(1, 10);
+        pos.y += UnityEngine.Random.Range(1, 10);
         this.transform.position = pos;
     }
 
