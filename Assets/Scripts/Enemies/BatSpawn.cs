@@ -12,13 +12,15 @@ public class BatSpawn : MonoBehaviour
     public float batHP = 200;
     public float batMaxHP = 200;
     public float hpPercent;
+    public int min = 1;
+    public int max = 10;
     [SerializeField] private hpBar healthDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
         Vector3 pos = this.transform.position;
-        pos.y += UnityEngine.Random.Range(1, 10);
+        pos.y += UnityEngine.Random.Range(min, max);
         this.transform.position = pos;
     }
 
