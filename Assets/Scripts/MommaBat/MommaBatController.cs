@@ -166,7 +166,6 @@ public class MommaBatController : MonoBehaviour
             //get spawn position
             UnityEngine.Vector3 spawnPos = new UnityEngine.Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
             float radius = 3f;
-
             int maxAttempts = 10;
             int attempts = 0;
 

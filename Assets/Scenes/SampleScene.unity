@@ -2387,28 +2387,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: e29e5e521e9202e41ae5cfcd98289204, type: 2}
+      objectReference: {fileID: 11400000, guid: 7d344af4fdf6a724f9331ae35914b0c7, type: 2}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: a83d72b6f60bd084c9cc35e7523c6ad3, type: 2}
+      objectReference: {fileID: 11400000, guid: 43ee02e5f5207b1498d17eb836795279, type: 2}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 7d344af4fdf6a724f9331ae35914b0c7, type: 2}
+      objectReference: {fileID: 11400000, guid: 90d5fea8643c26e4daa4a65d8cf2a246, type: 2}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 43ee02e5f5207b1498d17eb836795279, type: 2}
+      objectReference: {fileID: 11400000, guid: 7cc49c8f87537b4488eb56b11673a82c, type: 2}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: 90d5fea8643c26e4daa4a65d8cf2a246, type: 2}
+      objectReference: {fileID: 11400000, guid: e29e5e521e9202e41ae5cfcd98289204, type: 2}
     - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
       propertyPath: enemySpawn.Array.data[5]
       value: 

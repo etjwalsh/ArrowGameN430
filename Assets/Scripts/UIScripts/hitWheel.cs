@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class hitWheel : MonoBehaviour
 {
-    private float hitTime;
-    [SerializeField] private float hitTimer;
+    public float hitTime;
+    [SerializeField] public float hitTimer;
     [SerializeField] private Image greenWheel;
     [SerializeField] private int maxTime;
     [SerializeField] private int damage;

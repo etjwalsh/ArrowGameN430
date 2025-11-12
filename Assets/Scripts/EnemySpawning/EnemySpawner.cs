@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform spawnLocation;
     private int whichEnemy = 3;
     private bool started = false;
+    private float radius = 1.5f;
+
 
 
     [SerializeField] private Queue<GameObject> enemyQueue = new Queue<GameObject>();
@@ -40,8 +43,18 @@ public class EnemySpawner : MonoBehaviour
         }
         if (whichEnemy <= 2)
         {
+            UnityEngine.Vector3 spawnPos = new UnityEngine.Vector3();
+            int attempts = 0;
+            int maxAttempts = 10;
+
+            while (Physics.CheckSphere(spawnLocation.position, radius) && attempts < maxAttempts)
+            {
+                attempts++;
+                spawnPos = spawnLocation.position + new UnityEngine.Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            }
+
             //spawn the enemy at the index position of the enemy array
-            Instantiate(enemies[whichEnemy], spawnLocation.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), spawnLocation.rotation * Quaternion.Euler(0, 90, 0));
+            Instantiate(enemies[whichEnemy], spawnPos, spawnLocation.rotation * UnityEngine.Quaternion.Euler(0, 90, 0));
             whichEnemy++;
             yield return new WaitForSeconds(spawnDelay);
         }
