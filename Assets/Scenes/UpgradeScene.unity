@@ -1449,6 +1449,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.62352943
       objectReference: {fileID: 0}
+    - target: {fileID: 5191895779657177976, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: cost
       value: 0
@@ -3804,6 +3808,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.62352943
       objectReference: {fileID: 0}
+    - target: {fileID: 5191895779657177976, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: cost
       value: 0
@@ -4196,6 +4204,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510660739689991947, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191895779657177976, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
