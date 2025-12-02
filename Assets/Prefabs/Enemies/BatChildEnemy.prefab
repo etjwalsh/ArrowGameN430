@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatChildEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+      propertyPath: m_TagString
+      value: Bat
+      objectReference: {fileID: 0}
     - target: {fileID: 5991712972631833874, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54,14 +58,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7804007870407896042, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
       propertyPath: max
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7804007870407896042, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
       propertyPath: min
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804007870407896042, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+      propertyPath: isBossBat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804007870407896042, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+      propertyPath: flyDuration
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6552807115111040458}
   m_SourcePrefab: {fileID: 100100000, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+--- !u!1 &1266298897184747402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3424792948822077716, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
+  m_PrefabInstance: {fileID: 4473626020970700446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6552807115111040458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266298897184747402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6194bb581615b442bf5965f36410e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAmp: 1
+  maxAmp: 4
+  minSpeed: 3
+  maxSpeed: 5

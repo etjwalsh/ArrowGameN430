@@ -63,6 +63,14 @@ public class GameManager : MonoBehaviour
         {
             playerCoins += 100;
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SceneManager.LoadScene("Cave");
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            SceneManager.LoadScene("Mountain");
+        }
         //move to the upgrade scene when the player dies
         if (playerHealth <= 0)
         {
@@ -72,9 +80,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-//adds coins with allowance for the global mult, then adds any addative coin amounts
+    //adds coins with allowance for the global mult, then adds any addative coin amounts
     public void addCoins(float amount)
     {
         playerCoins += (amount * coinMult) + moreCoins;
-    } 
+    }
 }

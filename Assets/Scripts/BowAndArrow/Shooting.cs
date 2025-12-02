@@ -25,7 +25,6 @@ public class Shooting : MonoBehaviour
     private Vector3 targetPoint;
     private int layerMask;
 
-
     void Start()
     {
         //set the layermask 
@@ -56,7 +55,7 @@ public class Shooting : MonoBehaviour
             //limit power
             if (power < GameManager.instance.maxPower)
             {
-                power += (GameManager.instance.powerScale * (GameManager.instance.maxPower*2)) * Time.deltaTime; //build power up
+                power += (GameManager.instance.powerScale * (GameManager.instance.maxPower * 2)) * Time.deltaTime; //build power up
                 //move the arrow back slighly
                 rbArrow.transform.position -= new Vector3(0, -(moveScale * Time.deltaTime) / 5, moveScale * Time.deltaTime);
 
@@ -83,7 +82,7 @@ public class Shooting : MonoBehaviour
             }
 
             //set this arrow's damage amount by mutliplying the powermodifier by player dmg, ie. a half charged shot will do 50% of the expected dmg
-            arrowScript.damage = GameManager.instance.playerDamage*(power/100);
+            arrowScript.damage = GameManager.instance.playerDamage * (power / 100);
         }
 
         if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow

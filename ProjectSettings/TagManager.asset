@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Arrow
+  - Bat
+  - AnimatedBow
   layers:
   - Default
   - TransparentFX

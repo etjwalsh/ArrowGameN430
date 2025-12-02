@@ -24,9 +24,9 @@ public class BatSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 pos = this.transform.position;
+        Vector3 pos = transform.position;
         pos.y += UnityEngine.Random.Range(min, max);
-        this.transform.position = pos;
+        transform.position = pos;
     }
 
     void Update()

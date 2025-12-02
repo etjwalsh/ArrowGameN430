@@ -1,62 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Formats.Alembic.Importer;
 
 public class MommaBatController : MonoBehaviour
 {
     //stats and other stuff
     public Arrow arrowScript;
     public float value;
-    public int batHP = 3;
-    public int batMaxHP = 3;
+    public float batHP = 3.0f;
+    public float batMaxHP = 3.0f;
     public int lastHP;
     public float hpPercent;
     [SerializeField] private hpBar healthDisplay;
     private bool canBeHit = false;
 
     //for flying in
-    private UnityEngine.Vector3 targetPosition;
+    private Vector3 targetPosition;
     public float flyInDuration = 10.0f;
 
     //for bat children
     [SerializeField] private GameObject bat;
     private List<GameObject> batChildren = new List<GameObject> { };
-    private int numBats;
+    // private int numBats = -1;
     public float distanceInFront = 5f;
     public float spacing = 1f;
     public float arcAngle = 60f;
     public float circleRadius = 2f;
 
+    //For tracking phases
+    private int currentPhase = 3;
+
+    //for animation
+    public AlembicStreamPlayer ASP;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = new UnityEngine.Vector3(35, 30, 50);
-        UnityEngine.Vector3 pos = this.transform.position;
-        pos = new UnityEngine.Vector3(35, 90, 450);
-        this.transform.position = pos;
+        targetPosition = new Vector3(35, 30, 50);
+        Vector3 pos = new Vector3(35, 90, 450);
+        transform.position = pos;
 
+        //start the boss flying towards the player
         StartCoroutine(FlyIn());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //check if all the bats are dead
-        if (numBats == 0)
-        {
-            // canBeHit = true;
-        }
-
-        else
-        {
-            //set the number of bats to however many children the mamma bat has
-            numBats = gameObject.transform.childCount;
-        }
-
+        //check if the bat is dead, move to the next scene
         if (batHP <= 0)
         {
             //eventually make this so that it starts some sort of end sequence coroutine probably
@@ -66,9 +59,10 @@ public class MommaBatController : MonoBehaviour
 
             //change to the end of the game scene!
             Destroy(gameObject);
-            SceneManager.LoadScene("End");
+            SceneManager.LoadScene("Mountain");
         }
     }
+
     void OnCollisionEnter(Collision collision)
     {
         //check to make sure the mamma got hit by an arrow and can actually be hit
@@ -83,15 +77,21 @@ public class MommaBatController : MonoBehaviour
             //make the bat take damage
             batHP -= 1;
 
+            //Update current phase
+            currentPhase = (int)batHP;
+
             //update health bar UI
+            // Debug.Log("batHP: " + batHP);
+            // Debug.Log("batMaxHP: " + batMaxHP);
             hpPercent = batHP / batMaxHP;
+            // Debug.Log("hpPercent: " + hpPercent);
             healthDisplay.currentHp = hpPercent;
         }
     }
 
     IEnumerator FlyIn()
     {
-        UnityEngine.Vector3 startPosition = transform.position;
+        Vector3 startPosition = transform.position;
         float elapsed = 0f;
 
         //move the momma bat towards the target position slowly
@@ -99,45 +99,43 @@ public class MommaBatController : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / flyInDuration);
-            transform.position = UnityEngine.Vector3.Lerp(startPosition, targetPosition, Mathf.SmoothStep(0.0f, 1.0f, t));
+            transform.position = Vector3.Lerp(startPosition, targetPosition, Mathf.SmoothStep(0.0f, 1.0f, t));
             yield return null;
         }
 
         transform.position = targetPosition; // snap exactly to target
+
+        //start the phases of the boss fight
         StartCoroutine(MommaBatPhases());
     }
 
     IEnumerator MommaBatPhases()
     {
-        while (true)
+        //loop forever
+        while (batHP > 0)
         {
-            switch (batHP)
+            //check what HP the momma bat is on (int 3-2-1-0)
+            switch (currentPhase)
             {
-                //the bat is dead
-                case 0:
-                    {
-                        //tell the game manager to move the player to stage 2
-                        break;
-                    }
                 //the bat has 1 hp left
                 case 1:
                     {
                         //spawn the third phase of bats (bat circle)
-                        SpawnCircle(6);
+                        SpawnCircle(5);
                         break;
                     }
                 //the bat has 2 hp left
                 case 2:
                     {
                         //spawn the second phase of bats (bat arc)
-                        SpawnArc(5);
+                        SpawnArc(4);
                         break;
                     }
                 //the bat has 3 hp left
                 case 3:
                     {
                         //spawn the first phase of bats (bat line)
-                        SpawnLine(4);
+                        SpawnLine(3);
                         break;
                     }
             }
@@ -150,11 +148,18 @@ public class MommaBatController : MonoBehaviour
                 yield return null;
             }
 
-            while (batHP == lastHP)
-            {
-                canBeHit = true;
-                yield return null;
-            }
+            //make the boss able to be hit
+            canBeHit = true;
+
+            //make the bat open its eye
+
+            //allow the boss to get hit for 2 seconds only
+            yield return new WaitForSeconds(2f);
+
+            //make the boss unable to be hit
+            canBeHit = false;
+
+            //close the eye
 
         }
     }
@@ -164,7 +169,7 @@ public class MommaBatController : MonoBehaviour
         for (int i = 0; i < numBats; i++)
         {
             //get spawn position
-            UnityEngine.Vector3 spawnPos = new UnityEngine.Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
             float radius = 3f;
             int maxAttempts = 10;
             int attempts = 0;
@@ -173,11 +178,11 @@ public class MommaBatController : MonoBehaviour
             {
                 Debug.Log("can't spawn here");
                 attempts++;
-                spawnPos = new UnityEngine.Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
             }
 
             //spawn in a line at spawn position
-            GameObject spawnedBat = Instantiate(bat, spawnPos, transform.rotation * UnityEngine.Quaternion.Euler(0, 180, 0), transform);
+            GameObject spawnedBat = Instantiate(bat, spawnPos, transform.rotation * Quaternion.Euler(0, 180, 0), transform);
 
             //add the new bat to the list
             batChildren.Add(spawnedBat);
@@ -186,11 +191,51 @@ public class MommaBatController : MonoBehaviour
 
     private void SpawnArc(int numBats)
     {
-        Debug.Log("spawn arc!");
+        for (int i = 0; i < numBats; i++)
+        {
+            //get spawn position
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            float radius = 3f;
+            int maxAttempts = 10;
+            int attempts = 0;
+
+            while (Physics.CheckSphere(spawnPos, radius) && attempts < maxAttempts)
+            {
+                Debug.Log("can't spawn here");
+                attempts++;
+                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+            }
+
+            //spawn in a line at spawn position
+            GameObject spawnedBat = Instantiate(bat, spawnPos, transform.rotation * Quaternion.Euler(0, 180, 0), transform);
+
+            //add the new bat to the list
+            batChildren.Add(spawnedBat);
+        }
     }
 
     private void SpawnCircle(int numBats)
     {
-        Debug.Log("spawn circle!");
+        for (int i = 0; i < numBats; i++)
+        {
+            //get spawn position
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            float radius = 3f;
+            int maxAttempts = 10;
+            int attempts = 0;
+
+            while (Physics.CheckSphere(spawnPos, radius) && attempts < maxAttempts)
+            {
+                Debug.Log("can't spawn here");
+                attempts++;
+                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+            }
+
+            //spawn in a line at spawn position
+            GameObject spawnedBat = Instantiate(bat, spawnPos, transform.rotation * Quaternion.Euler(0, 180, 0), transform);
+
+            //add the new bat to the list
+            batChildren.Add(spawnedBat);
+        }
     }
 }
