@@ -9,11 +9,12 @@ public class SlimeController : MonoBehaviour
     [SerializeField] private float puffDuration = 0.2f;
 
     //stats
-    [Header("Stats")]
     public Arrow arrowScript;
-    public float value;
-    public float slimeMaxHPScaling = 200;
-    public float slimeMaxHP => slimeMaxHPScaling * GameManager.instance.difficulty;
+    [Header("Stats")]
+    [SerializeField] public float value;
+    [SerializeField] public float slimeHPScaling = 200;
+    [SerializeField] public float damage;
+    public float slimeMaxHP => slimeHPScaling * GameManager.instance.difficulty;
     public float slimeHP;
     public float hpPercent;
     public int min = 1;
@@ -90,7 +91,7 @@ public class SlimeController : MonoBehaviour
             GameManager.instance.addCoins(value);
             Destroy(gameObject);
         }
-        if (hw.hitTime >= hw.hitTimer)
+        if (hw.hitTime >= hw.hitRate)
         {
             StartCoroutine(HitAnimation());
         }

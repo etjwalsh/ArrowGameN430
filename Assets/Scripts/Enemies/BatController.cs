@@ -1,22 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Formats.Alembic.Importer;
 
-public class GoblinController : MonoBehaviour
+public class BatSpawn : MonoBehaviour
 {
-    //stats
     public Arrow arrowScript;
     [Header("Stats")]
     [SerializeField] public float value;
-    [SerializeField] public float goblinHPScaling = 200;
+    [SerializeField] public float batHPScaling = 100;
     [SerializeField] public float damage;
-    public float goblinMaxHP => goblinHPScaling * GameManager.instance.difficulty;
-    private float goblinHP;
+    public float batMaxHP => batHPScaling * GameManager.instance.difficulty;
+    private float batHP;
     public float hpPercent;
     public int min = 1;
     public int max = 10;
-
-    [Header("UI")]
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
 
@@ -24,18 +24,19 @@ public class GoblinController : MonoBehaviour
     private float attackDuration = 0.1f;
     private Vector3 attackSpot;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        goblinHP = goblinMaxHP;
-
+        batHP = batMaxHP;
+        Vector3 pos = transform.position;
+        pos.y += UnityEngine.Random.Range(min, max);
+        transform.position = pos;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (goblinHP <= 0)
+        // Debug.Log("gamemanager instance maxPower = " + GameManager.instance.maxPower);
+        if (batHP <= 0)
         {
             GameManager.instance.addCoins(value);
             Destroy(gameObject);
@@ -53,12 +54,12 @@ public class GoblinController : MonoBehaviour
             //get reference to this arrow script
             arrowScript = collision.gameObject.GetComponent<Arrow>();
             //make the bat take damage
-            goblinHP -= arrowScript.damage;
+            batHP -= arrowScript.damage;
 
-            hpPercent = goblinHP / goblinMaxHP;
+            hpPercent = batHP / batMaxHP;
             healthDisplay.currentHp = hpPercent;
 
-            Debug.Log("goblin health is now " + goblinHP);
+            Debug.Log("bat health is now " + batHP);
         }
     }
 

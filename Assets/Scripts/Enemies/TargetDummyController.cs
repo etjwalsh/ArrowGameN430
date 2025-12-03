@@ -1,19 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Formats.Alembic.Importer;
 
-public class BatSpawn : MonoBehaviour
+public class DummyController : MonoBehaviour
 {
-    public Arrow arrowScript;
-    public float value;
-    public float batHP = 200;
-    public float batMaxHP = 200;
-    public float hpPercent;
-    public int min = 1;
-    public int max = 10;
+    //stats
+    private Arrow arrowScript;
+    [Header("Stats")]
+    [SerializeField] public float value;
+    [SerializeField] public float dummyHPScaling = 200;
+    [SerializeField] public float damage;
+    public float dummyMaxHP => dummyHPScaling * GameManager.instance.difficulty;
+    private float dummyHP;
+    private float hpPercent;
+
+    [Header("UI")]
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
 
@@ -21,23 +22,23 @@ public class BatSpawn : MonoBehaviour
     private float attackDuration = 0.1f;
     private Vector3 attackSpot;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 pos = transform.position;
-        pos.y += UnityEngine.Random.Range(min, max);
-        transform.position = pos;
+        dummyHP = dummyMaxHP;
+        hw.damage = damage;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Debug.Log("gamemanager instance maxPower = " + GameManager.instance.maxPower);
-        if (batHP <= 0)
+        if (dummyHP <= 0)
         {
             GameManager.instance.addCoins(value);
             Destroy(gameObject);
         }
-        if (hw.hitTime >= hw.hitTimer)
+        if (hw.hitTime >= hw.hitRate)
         {
             StartCoroutine(HitAnimation());
         }
@@ -50,12 +51,12 @@ public class BatSpawn : MonoBehaviour
             //get reference to this arrow script
             arrowScript = collision.gameObject.GetComponent<Arrow>();
             //make the bat take damage
-            batHP -= arrowScript.damage;
+            dummyHP -= arrowScript.damage;
 
-            hpPercent = batHP / batMaxHP;
+            hpPercent = dummyHP / dummyMaxHP;
             healthDisplay.currentHp = hpPercent;
 
-            Debug.Log("bat health is now " + batHP);
+            Debug.Log("dummy health is now " + dummyHP);
         }
     }
 

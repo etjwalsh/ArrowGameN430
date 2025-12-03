@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TallTargetSpawn : MonoBehaviour
 {
-    public float targetHP;
-    public float value;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +12,5 @@ public class TallTargetSpawn : MonoBehaviour
         pos.y += 3.0f;
         this.transform.position = pos;
     }
-    void Update()
-    {
-        // Debug.Log("gamemanager instance maxPower = " + GameManager.instance.maxPower);
-        // if (targetHP <= 0)
-        // {
-        //     Destroy(gameObject);
-        //     GameManager.instance.addCoins(value);
-        // }
-    }
+
 }

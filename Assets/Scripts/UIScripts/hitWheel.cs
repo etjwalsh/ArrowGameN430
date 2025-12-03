@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class hitWheel : MonoBehaviour
 {
-    public float hitTime;
-    [SerializeField] public float hitTimer;
+    public float hitTime; //time since last hit
+    public float hitRate; //attack rate seconds
     [SerializeField] private Image greenWheel;
-    [SerializeField] private int maxTime;
-    [SerializeField] private int damage;
+    public float damage; //damage to deal to player on hit
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class hitWheel : MonoBehaviour
             return;
         }
         //if the timer ran out / ended
-        if (hitTime >= hitTimer)
+        if (hitTime >= hitRate)
         {
             screenFlash.SpecialEffects.ScreenFlashEffect(0.1f);
 
@@ -37,8 +36,10 @@ public class hitWheel : MonoBehaviour
         }
         else
         {
-            hitTime += maxTime * Time.deltaTime;
+            //increment the timer
+            hitTime += Time.deltaTime;
         }
-        greenWheel.fillAmount = hitTime / hitTimer;
+        //update the wheel fill amount
+        greenWheel.fillAmount = hitTime / hitRate;
     }
 }

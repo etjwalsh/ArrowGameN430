@@ -69,9 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowScript: {fileID: 0}
-  value: 0
-  goblinHP: 200
-  goblinMaxHP: 200
+  value: 1
+  goblinHPScaling: 500
   hpPercent: 0
   min: 1
   max: 10
