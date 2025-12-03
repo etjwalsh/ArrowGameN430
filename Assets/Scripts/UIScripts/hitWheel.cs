@@ -23,6 +23,8 @@ public class hitWheel : MonoBehaviour
         //if the timer ran out / ended
         if (hitTime >= hitTimer)
         {
+            screenFlash.SpecialEffects.ScreenFlashEffect(0.1f);
+
             //hit the player for damage amount
             GameManager.instance.playerHealth -= damage;
 
