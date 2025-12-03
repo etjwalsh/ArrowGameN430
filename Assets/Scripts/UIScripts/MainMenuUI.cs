@@ -10,7 +10,7 @@ public class MainMenuUI : MonoBehaviour
     public void OnStartClicked()
     {
         //start the game
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Forest");
     }
 
     public void OnExitClicked()

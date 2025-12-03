@@ -12,8 +12,9 @@ public class SlimeController : MonoBehaviour
     [Header("Stats")]
     public Arrow arrowScript;
     public float value;
-    public float slimeHP = 200;
-    public float slimeMaxHP = 200;
+    public float slimeMaxHPScaling = 200;
+    public float slimeMaxHP => slimeMaxHPScaling * GameManager.instance.difficulty;
+    public float slimeHP;
     public float hpPercent;
     public int min = 1;
     public int max = 10;
@@ -38,6 +39,7 @@ public class SlimeController : MonoBehaviour
 
     void Start()
     {
+        slimeHP = slimeMaxHP;
         originalScale = transform.localScale;
         startPosition = transform.position;
         rb = GetComponent<Rigidbody>();

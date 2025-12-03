@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222887483177e034aa2ebf3c10b894cb, type: 3}
+  m_Name: fw 7
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
+  - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
+  - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
+  spawnBuffer: 2
+  waveBuffer: 12
+  spawnLevel: 2
+  difficultyIncrement: 0.1
+  endOfSpawns: 0

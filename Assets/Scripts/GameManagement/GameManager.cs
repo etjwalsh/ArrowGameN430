@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
     public float maxPower = 100; //max bow power
     public float playerCoins = 0; //Coins
     public float coinMult = 1; //coin mult from upgrades
-    public float moreCoins = 0;
+    public float moreCoins = 0; //addative coin amount from upgrades
+    public float difficulty = 1; //overall game difficulty
     public List<string> upgrades = new(); //list for upgrade names
+    public int currentSceneIndex = 0;
 
     //singleton pattern
     private static GameManager _instance;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             playerHealth = 0;

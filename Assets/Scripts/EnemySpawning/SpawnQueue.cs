@@ -54,6 +54,8 @@ public class SpawnQueue : MonoBehaviour
         {
             yield break;
         }
+        //increase the game difficulty based on the wave's difficulty increment
+        GameManager.instance.difficulty += currentWave.difficultyIncrement;
 
         //loop through the array stored in the current wave
         for (int i = 0; i < currentWave.enemiesToSpawn.Length; i++)

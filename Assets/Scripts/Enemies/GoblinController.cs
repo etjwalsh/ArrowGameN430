@@ -8,8 +8,9 @@ public class GoblinController : MonoBehaviour
     [Header("Stats")]
     public Arrow arrowScript;
     public float value;
-    public float goblinHP = 200;
-    public float goblinMaxHP = 200;
+    public float goblinHPScaleing = 200;
+    public float goblinMaxHP => goblinHPScaleing * GameManager.instance.difficulty;
+    public float goblinHP;
     public float hpPercent;
     public int min = 1;
     public int max = 10;
@@ -26,6 +27,7 @@ public class GoblinController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        goblinHP = goblinMaxHP;
 
     }
 
