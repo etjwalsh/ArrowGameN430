@@ -32,7 +32,7 @@ public class MommaBatController : MonoBehaviour
     //For tracking phases
     private int currentPhase = 3;
 
-    //for animation
+    //for eye animation
     public AlembicStreamPlayer ASP;
 
     // Start is called before the first frame update
@@ -41,6 +41,13 @@ public class MommaBatController : MonoBehaviour
         targetPosition = new Vector3(35, 30, 50);
         Vector3 pos = new Vector3(35, 90, 450);
         transform.position = pos;
+
+        //make sure the eye is closed
+        ASP.CurrentTime += Time.deltaTime;
+        if (ASP.CurrentTime < ASP.EndTime)
+        {
+            ASP.CurrentTime = ASP.EndTime;
+        }
 
         //start the boss flying towards the player
         StartCoroutine(FlyIn());
@@ -152,6 +159,12 @@ public class MommaBatController : MonoBehaviour
             canBeHit = true;
 
             //make the bat open its eye
+            //make sure the eye is closed
+            ASP.CurrentTime -= Time.deltaTime;
+            if (ASP.CurrentTime > ASP.StartTime)
+            {
+                ASP.CurrentTime = ASP.StartTime;
+            }
 
             //allow the boss to get hit for 2 seconds only
             yield return new WaitForSeconds(2f);
@@ -160,7 +173,12 @@ public class MommaBatController : MonoBehaviour
             canBeHit = false;
 
             //close the eye
-
+            //make sure the eye is closed
+            ASP.CurrentTime += Time.deltaTime;
+            if (ASP.CurrentTime < ASP.EndTime)
+            {
+                ASP.CurrentTime = ASP.EndTime;
+            }
         }
     }
 

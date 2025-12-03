@@ -38,7 +38,7 @@ public class SlimeController : MonoBehaviour
             hpPercent = slimeHP / slimeMaxHP;
             healthDisplay.currentHp = hpPercent;
 
-            Debug.Log("bat health is now " + slimeHP);
+            Debug.Log("slime health is now " + slimeHP);
         }
     }
 
