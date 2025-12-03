@@ -18,7 +18,9 @@ public class Currencies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance != null) {
         coins = GameManager.instance.playerCoins;
         curText.text = "Coins: " + coins.ToString();
+        }
     }
 }

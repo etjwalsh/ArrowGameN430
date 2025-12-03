@@ -37,6 +37,8 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance != null)
+        {
         // Debug.Log("power is = " + power);
         if (Input.GetMouseButton(0)) //holding down the arrow
         {
@@ -107,6 +109,7 @@ public class Shooting : MonoBehaviour
 
             //reset animation
             ASP.CurrentTime = ASP.StartTime;
+        }
         }
     }
 

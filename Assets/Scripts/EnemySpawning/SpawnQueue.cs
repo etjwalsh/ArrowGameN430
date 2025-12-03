@@ -50,6 +50,10 @@ public class SpawnQueue : MonoBehaviour
     {
         //get the current wave
         EnemyWave currentWave = GetWave();
+        if (currentWave == null) //if there is no wave to spawn, exit the coroutine
+        {
+            yield break;
+        }
 
         //loop through the array stored in the current wave
         for (int i = 0; i < currentWave.enemiesToSpawn.Length; i++)
