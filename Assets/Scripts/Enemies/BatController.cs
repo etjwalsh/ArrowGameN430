@@ -5,14 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Formats.Alembic.Importer;
 
-public class BatSpawn : MonoBehaviour
+public class BatController : MonoBehaviour
 {
     public Arrow arrowScript;
     [Header("Stats")]
     [SerializeField] public float value;
     [SerializeField] public float batHPScaling = 100f;
     [SerializeField] public float damage = 10f;
-    [SerializeField]  public float attackRate = 4f;
+    [SerializeField] public float attackRate = 4f;
     private float batMaxHP => batHPScaling * GameManager.instance.difficulty;
     private float batHP;
     private float hpPercent;
