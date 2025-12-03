@@ -175,8 +175,8 @@ MonoBehaviour:
   dummyHPScaling: 200
   damage: 50
   attackRate: 6
-  healthDisplay: {fileID: 0}
-  hw: {fileID: 0}
+  healthDisplay: {fileID: 8486146266514818679}
+  hw: {fileID: 2416029150942403857}
 --- !u!1001 &570384115445150418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +295,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
   m_PrefabInstance: {fileID: 570384115445150418}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8486146266514818679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8227707383497733285, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+  m_PrefabInstance: {fileID: 570384115445150418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6972eb8e9f9e445b6a68ee42f9a77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060176371679157880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -482,6 +493,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+--- !u!114 &2416029150942403857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+  m_PrefabInstance: {fileID: 3378729528656237044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3af8159799b26d45b7c0906cd1f96fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5283816256491319694 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
