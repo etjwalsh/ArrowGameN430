@@ -172,8 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ed7684843ffd64c819988d494a0ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  value: 5
   dummyHPScaling: 200
+  damage: 50
+  attackRate: 6
   healthDisplay: {fileID: 5041591051131535410}
   hw: {fileID: 2321154606542561847}
 --- !u!114 &8592264584826058063

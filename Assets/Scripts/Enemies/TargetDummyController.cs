@@ -10,6 +10,7 @@ public class DummyController : MonoBehaviour
     [SerializeField] public float value;
     [SerializeField] public float dummyHPScaling = 200;
     [SerializeField] public float damage;
+    [SerializeField]  public float attackRate = 4f;
     public float dummyMaxHP => dummyHPScaling * GameManager.instance.difficulty;
     private float dummyHP;
     private float hpPercent;
@@ -28,6 +29,7 @@ public class DummyController : MonoBehaviour
     {
         dummyHP = dummyMaxHP;
         hw.damage = damage;
+        hw.hitRate = attackRate;
     }
 
     // Update is called once per frame

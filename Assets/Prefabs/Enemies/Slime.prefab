@@ -84,9 +84,11 @@ MonoBehaviour:
   puffScale: 1.35
   puffDuration: 0.075
   arrowScript: {fileID: 0}
-  value: 0
+  value: 5
+  slimeHPScaling: 200
+  damage: 30
+  attackRate: 5
   slimeHP: 200
-  slimeMaxHP: 200
   hpPercent: 0
   min: 1
   max: 10

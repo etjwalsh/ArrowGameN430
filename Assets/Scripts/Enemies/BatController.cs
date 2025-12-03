@@ -10,13 +10,15 @@ public class BatSpawn : MonoBehaviour
     public Arrow arrowScript;
     [Header("Stats")]
     [SerializeField] public float value;
-    [SerializeField] public float batHPScaling = 100;
-    [SerializeField] public float damage;
-    public float batMaxHP => batHPScaling * GameManager.instance.difficulty;
+    [SerializeField] public float batHPScaling = 100f;
+    [SerializeField] public float damage = 10f;
+    [SerializeField]  public float attackRate = 4f;
+    private float batMaxHP => batHPScaling * GameManager.instance.difficulty;
     private float batHP;
-    public float hpPercent;
-    public int min = 1;
-    public int max = 10;
+    private float hpPercent;
+    private int min = 1;
+    private int max = 10;
+    [Header("UI")]
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
 
@@ -27,6 +29,8 @@ public class BatSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hw.damage = damage;
+        hw.hitRate = attackRate;
         batHP = batMaxHP;
         Vector3 pos = transform.position;
         pos.y += UnityEngine.Random.Range(min, max);

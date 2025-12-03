@@ -10,6 +10,7 @@ public class GoblinController : MonoBehaviour
     [SerializeField] public float value;
     [SerializeField] public float goblinHPScaling = 200;
     [SerializeField] public float damage;
+    [SerializeField]  public float attackRate = 4f;
     public float goblinMaxHP => goblinHPScaling * GameManager.instance.difficulty;
     private float goblinHP;
     public float hpPercent;
@@ -29,7 +30,8 @@ public class GoblinController : MonoBehaviour
     void Start()
     {
         goblinHP = goblinMaxHP;
-
+        hw.damage = damage;
+        hw.hitRate = attackRate;
     }
 
     // Update is called once per frame

@@ -14,6 +14,7 @@ public class SlimeController : MonoBehaviour
     [SerializeField] public float value;
     [SerializeField] public float slimeHPScaling = 200;
     [SerializeField] public float damage;
+    [SerializeField]  public float attackRate = 4f;
     public float slimeMaxHP => slimeHPScaling * GameManager.instance.difficulty;
     public float slimeHP;
     public float hpPercent;
@@ -40,6 +41,8 @@ public class SlimeController : MonoBehaviour
 
     void Start()
     {
+        hw.damage = damage;
+        hw.hitRate = attackRate;
         slimeHP = slimeMaxHP;
         originalScale = transform.localScale;
         startPosition = transform.position;

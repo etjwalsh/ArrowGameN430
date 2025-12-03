@@ -72,11 +72,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowScript: {fileID: 0}
   value: 5
-  batHP: 200
-  batMaxHP: 200
-  hpPercent: 0
-  min: 1
-  max: 10
+  batHPScaling: 100
+  damage: 10
+  attackRate: 1.5
   healthDisplay: {fileID: 8772247369518576440}
   hw: {fileID: 5515287607824849568}
 --- !u!1001 &537443385809956657
