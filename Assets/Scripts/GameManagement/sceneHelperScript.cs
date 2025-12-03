@@ -21,6 +21,5 @@ public class sceneHelperScript : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Current Scene Index: " + GameManager.instance.currentSceneIndex);
     }
 }

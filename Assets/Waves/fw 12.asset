@@ -22,4 +22,4 @@ MonoBehaviour:
   waveBuffer: 6
   spawnLevel: 2
   difficultyIncrement: 0.5
-  endOfSpawns: 1
+  endOfSpawns: 0

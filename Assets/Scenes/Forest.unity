@@ -1796,6 +1796,10 @@ PrefabInstance:
       propertyPath: enemySpawn.Array.data[11]
       value: 
       objectReference: {fileID: 11400000, guid: ee10ae2f4dc1e634a9e7bdceddd1f536, type: 2}
+    - target: {fileID: 6774357188279535292, guid: 3b0e3eed25cc9474db33299171da1074, type: 3}
+      propertyPath: enemySpawn.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee10ae2f4dc1e634a9e7bdceddd1f536, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -66,6 +66,18 @@ public class SpawnQueue : MonoBehaviour
             {
                 //set the random spawn spot
                 baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
+                float radius = 3f;
+                int maxAttempts = 100;
+                int attempts = 0;
+
+                //check to see if there is already an enemy there
+                while (Physics.CheckSphere(baseSpawn1, radius) && attempts < maxAttempts)
+                {
+                    Debug.Log("can't spawn here");
+                    attempts++;
+                    baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
+                }
+
                 //spawn the enemy at spawn row 1
                 Instantiate(enemyToSpawn, baseSpawn1, enemyToSpawn.transform.rotation);
             }
@@ -73,6 +85,17 @@ public class SpawnQueue : MonoBehaviour
             {
                 //set the random spawn point
                 baseSpawn2 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
+                float radius = 3f;
+                int maxAttempts = 100;
+                int attempts = 0;
+
+                //check to see if there is already an enemy there
+                while (Physics.CheckSphere(baseSpawn2, radius) && attempts < maxAttempts)
+                {
+                    Debug.Log("can't spawn here");
+                    attempts++;
+                    baseSpawn2 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
+                }
                 //spawn the enemy at spawn row 2
                 Instantiate(enemyToSpawn, baseSpawn2, enemyToSpawn.transform.rotation);
             }
@@ -80,6 +103,17 @@ public class SpawnQueue : MonoBehaviour
             {
                 //set the random spawn spot
                 baseSpawn3 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
+                float radius = 3f;
+                int maxAttempts = 100;
+                int attempts = 0;
+
+                //check to see if there is already an enemy there
+                while (Physics.CheckSphere(baseSpawn3, radius) && attempts < maxAttempts)
+                {
+                    Debug.Log("can't spawn here");
+                    attempts++;
+                    baseSpawn3 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
+                }
                 //spawn the enemy at spawn row 3
                 Instantiate(enemyToSpawn, baseSpawn3, enemyToSpawn.transform.rotation);
             }

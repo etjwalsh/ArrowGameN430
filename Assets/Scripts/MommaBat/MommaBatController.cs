@@ -18,7 +18,7 @@ public class MommaBatController : MonoBehaviour
 
     //for flying in
     private Vector3 targetPosition;
-    public float flyInDuration = 10.0f;
+    public float flyInDuration;
 
     //for bat children
     [SerializeField] private GameObject bat;

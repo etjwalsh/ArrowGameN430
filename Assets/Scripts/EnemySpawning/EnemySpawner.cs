@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform spawnLocation;
     private int whichEnemy = 3;
     private bool started = false;
-    private float radius = 1.5f;
+    private float radius = 3f;
 
 
 
@@ -36,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(spawnDelay);
+        Debug.Log("got in here");
 
         if (whichEnemy > 2)
         {
@@ -47,10 +48,13 @@ public class EnemySpawner : MonoBehaviour
             int attempts = 0;
             int maxAttempts = 10;
 
+            Debug.Log("spawnLocation.position is: " + spawnLocation.position);
+
             while (Physics.CheckSphere(spawnLocation.position, radius) && attempts < maxAttempts)
             {
                 attempts++;
                 spawnPos = spawnLocation.position + new UnityEngine.Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                Debug.Log("attempts: " + attempts);
             }
 
             //spawn the enemy at the index position of the enemy array

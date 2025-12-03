@@ -16,8 +16,8 @@ public class BatSpawn : MonoBehaviour
     private float batMaxHP => batHPScaling * GameManager.instance.difficulty;
     private float batHP;
     private float hpPercent;
-    private int min = 1;
-    private int max = 10;
+    private int min = 5;
+    private int max = 15;
     [Header("UI")]
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;

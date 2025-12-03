@@ -160,7 +160,7 @@ MonoBehaviour:
   lastHP: 0
   hpPercent: 0
   healthDisplay: {fileID: 5853543825536713113}
-  flyInDuration: 1
+  flyInDuration: 5
   bat: {fileID: 1266298897184747402, guid: f4d8ec6068bef7c40b1791945319baf4, type: 3}
   distanceInFront: 10
   spacing: 5
@@ -297,15 +297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,15 +617,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_LocalPosition.x

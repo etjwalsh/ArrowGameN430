@@ -72,7 +72,8 @@ PrefabInstance:
       propertyPath: flyDuration
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4257247847488812705, guid: abb8eaf8ed7cfda4baebc220f0fbd349, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

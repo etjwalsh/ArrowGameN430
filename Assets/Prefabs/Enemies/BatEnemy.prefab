@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5991712972631833874}
   - component: {fileID: 5910220970797014818}
   - component: {fileID: 7804007870407896042}
+  - component: {fileID: 4257247847488812705}
   m_Layer: 0
   m_Name: BatEnemy
   m_TagString: Untagged
@@ -77,6 +78,22 @@ MonoBehaviour:
   attackRate: 1.5
   healthDisplay: {fileID: 8772247369518576440}
   hw: {fileID: 5515287607824849568}
+--- !u!114 &4257247847488812705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3424792948822077716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6194bb581615b442bf5965f36410e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAmp: 1
+  maxAmp: 4
+  minSpeed: 3
+  maxSpeed: 5
 --- !u!1001 &537443385809956657
 PrefabInstance:
   m_ObjectHideFlags: 0
