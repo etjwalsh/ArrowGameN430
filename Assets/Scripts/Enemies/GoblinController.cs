@@ -21,6 +21,7 @@ public class GoblinController : MonoBehaviour
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
 
+
     //for little hitting animation
     private float attackDuration = 0.1f;
     private Vector3 attackSpot;
@@ -40,6 +41,7 @@ public class GoblinController : MonoBehaviour
         if (goblinHP <= 0)
         {
             GameManager.instance.addCoins(value);
+
             Destroy(gameObject);
         }
         if (hw.hitTime >= hw.hitRate)
