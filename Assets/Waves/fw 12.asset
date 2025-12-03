@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 8886590991867022183, guid: 6349e33a7ef594e408b009d709936881, type: 3}
   - {fileID: 5699056882820384433, guid: cf79782191d8266488a1fb1141086093, type: 3}
   spawnBuffer: 0
-  waveBuffer: 12
+  waveBuffer: 6
   spawnLevel: 2
   difficultyIncrement: 0.5
-  endOfSpawns: 0
+  endOfSpawns: 1

@@ -15,8 +15,8 @@ MonoBehaviour:
   enemiesToSpawn:
   - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
   - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
-  spawnBuffer: 2
-  waveBuffer: 12
+  spawnBuffer: 1
+  waveBuffer: 6
   spawnLevel: 2
   difficultyIncrement: 0.1
   endOfSpawns: 0
