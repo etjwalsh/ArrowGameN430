@@ -9,6 +9,7 @@ public class SlimeController : MonoBehaviour
     [SerializeField] private float puffDuration = 0.2f;
 
     //stats
+    [Header("Stats")]
     public Arrow arrowScript;
     public float value;
     public float slimeHP = 200;
@@ -19,15 +20,47 @@ public class SlimeController : MonoBehaviour
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
 
+    [Header("Bounce Settings")]
+    [SerializeField] private float normalBounceMin;
+    [SerializeField] private float normalBounceMax;
+    [SerializeField] private float highBounceMin;
+    [SerializeField] private float highBounceMax;
+    [SerializeField] private float bounceSpeedMin;
+    [SerializeField] private float bounceSpeedMax;
+    [SerializeField] private float highBounceChance = 0.2f; //20% chance
+
+    //animation stuff
     private Vector3 originalScale;
+    private Vector3 startPosition;
+    private bool isGrounded = true;
+    private Rigidbody rb;
+    private float gravityMultiplier = 2.0f;
 
     void Start()
     {
         originalScale = transform.localScale;
+        startPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody>();
+        }
+
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+
+        StartCoroutine(JumpAround());
+    }
+    void FixedUpdate()
+    {
+        // Apply custom gravity
+        rb.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        //check if it got hit by an arrow
         if (collision.gameObject.name == "Arrow(Clone)")
         {
             //get reference to this arrow script
@@ -39,6 +72,12 @@ public class SlimeController : MonoBehaviour
             healthDisplay.currentHp = hpPercent;
 
             Debug.Log("slime health is now " + slimeHP);
+        }
+
+        //check if it hit the ground
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            isGrounded = true;
         }
     }
 
@@ -82,5 +121,39 @@ public class SlimeController : MonoBehaviour
         }
 
         transform.localScale = originalScale;
+    }
+
+    private IEnumerator JumpAround()
+    {
+        while (true)
+        {
+            //Wait until we're on the ground
+            yield return new WaitUntil(() => isGrounded);
+
+            //Small delay before bouncing
+            yield return new WaitForSeconds(Random.Range(0.1f, 0.5f));
+
+            // Decide if this is a high bounce
+            bool isHighBounce = Random.value < highBounceChance;
+            float bounceHeight;
+            if (isHighBounce)
+            {
+                bounceHeight = Random.Range(highBounceMin, highBounceMax);
+            }
+            else
+            {
+                bounceHeight = Random.Range(normalBounceMin, normalBounceMax);
+            }
+
+            // Apply upward force
+            float bounceForce = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * bounceHeight * rb.mass) * Random.Range(bounceSpeedMin, bounceSpeedMax);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+
+            isGrounded = false;
+
+            // Wait a bit before checking for ground again
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 }

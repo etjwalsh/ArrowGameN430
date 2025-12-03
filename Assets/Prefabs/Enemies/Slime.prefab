@@ -92,6 +92,13 @@ MonoBehaviour:
   max: 10
   healthDisplay: {fileID: 294587869618925439}
   hw: {fileID: 3540359553965590247}
+  normalBounceMin: 2
+  normalBounceMax: 3
+  highBounceMin: 5
+  highBounceMax: 7
+  bounceSpeedMin: 2
+  bounceSpeedMax: 5
+  highBounceChance: 0.1
 --- !u!136 &3816167909289767846
 CapsuleCollider:
   m_ObjectHideFlags: 0
