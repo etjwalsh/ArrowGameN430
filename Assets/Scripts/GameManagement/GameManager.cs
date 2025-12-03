@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //keeps track of the main stats for the game
     //these will be the stats that the upgrades mess with
     public float playerHealth = 100; //how much HP the player has
-    public float maxPlayerHealth = 100; //max amount of HP the player can have
+    public float maxPlayerHealth = 25; //max amount of HP the player can have
     public float playerDamage = 100; //how much damage the player does  
     public int maxArrows = 1; //how many arrows the player can shoot at once
     public float powerScale = 1; //how quickly the arrow draws back
