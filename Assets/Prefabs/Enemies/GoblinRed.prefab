@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 457359518700834819}
   - component: {fileID: 963738251536901797}
   m_Layer: 0
-  m_Name: Goblin 1
+  m_Name: GoblinRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: cb283340b3f5995478e9f10d1f206426, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 169b68d929ddd9d4e888ddac26dc2d91, type: 2}
+      objectReference: {fileID: 2100000, guid: b1f0fc0fd299c6f47b4fa93b6093f5f2, type: 2}
     - target: {fileID: 919132149155446097, guid: cb283340b3f5995478e9f10d1f206426, type: 3}
       propertyPath: m_Name
       value: Goblin_Unwrapped_AA_V1
