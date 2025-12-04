@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4257247847488812705}
   m_Layer: 0
   m_Name: BatEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
