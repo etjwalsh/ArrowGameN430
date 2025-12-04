@@ -8,6 +8,7 @@ TagManager:
   - Arrow
   - Bat
   - AnimatedBow
+  - Enemy
   layers:
   - Default
   - TransparentFX
