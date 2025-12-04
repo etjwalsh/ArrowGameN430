@@ -11,6 +11,8 @@ public class MommaBatController : MonoBehaviour
     public float value;
     public float batHP = 3.0f;
     public float batMaxHP = 3.0f;
+    [SerializeField] public float damage = 10f;
+    [SerializeField]  public float attackRate = 4f;
     public int lastHP;
     public float hpPercent;
     [SerializeField] private hpBar healthDisplay;

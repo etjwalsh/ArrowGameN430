@@ -158,6 +158,8 @@ MonoBehaviour:
   value: 0
   batHP: 3
   batMaxHP: 3
+  damage: 10
+  attackRate: 10
   lastHP: 0
   hpPercent: 0
   healthDisplay: {fileID: 5853543825536713113}
