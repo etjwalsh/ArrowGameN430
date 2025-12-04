@@ -68,30 +68,42 @@ public class SpawnQueue : MonoBehaviour
                 //set the random spawn spot
                 baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
                 float radius = 3f;
-                // int maxAttempts = 10;
-                // int attempts = 0;
+                int maxAttempts = 10;
+                int attempts = 0;
 
-                //check to make sure it isnt colliding with the floor
-                Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
-
-                //check to see if there is already an enemy there
-                // while (Physics.CheckSphere(baseSpawn1, radius) && attempts < maxAttempts)
-                // {
-                foreach (Collider hit in hits)
+                //check to make sure the spawn point is not inside of another enemy
+                while (attempts < maxAttempts)
                 {
-                    if (hit.CompareTag("Ground"))
+                    bool blocked = false;
+
+                    //check to make sure it isnt colliding with the floor
+                    Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
+
+                    //check to see if there is already an enemy there
+                    foreach (Collider hit in hits)
                     {
-                        continue;
+                        if (hit.CompareTag("Ground"))
+                        {
+                            continue;
+                        }
+                        else if (hit.CompareTag("Enemy"))
+                        {
+                            Debug.Log("can't spawn here");
+                            blocked = true;
+                            break;
+                        }
                     }
-                    else if (hit.CompareTag("Enemy"))
+
+                    if (!blocked && !Physics.CheckSphere(baseSpawn1, radius))
                     {
-                        // Debug.Log("can't spawn here");
-                        // attempts++;
-                        Debug.Log("resetting baseSpawn1");
-                        baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
+                        //Good position, exit loop
+                        break;
                     }
+
+                    //reset the position
+                    attempts++;
+                    baseSpawn1 = new Vector3(Random.Range(-10, 10), 4.5f, 10);
                 }
-                // }
 
                 //spawn the enemy at spawn row 1
                 Instantiate(enemyToSpawn, baseSpawn1, enemyToSpawn.transform.rotation);
@@ -101,30 +113,42 @@ public class SpawnQueue : MonoBehaviour
                 //set the random spawn point
                 baseSpawn2 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
                 float radius = 3f;
-                // int maxAttempts = 100;
-                // int attempts = 0;
+                int maxAttempts = 10;
+                int attempts = 0;
 
-                //check to make sure it isnt colliding with the floor
-                Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
-
-                //check to see if there is already an enemy there
-                // while (Physics.CheckSphere(baseSpawn1, radius) && attempts < maxAttempts)
-                // {
-                foreach (Collider hit in hits)
+                //check to make sure the spawn point is not inside of another enemy
+                while (attempts < maxAttempts)
                 {
-                    if (hit.CompareTag("Ground"))
+                    bool blocked = false;
+
+                    //check to make sure it isnt colliding with the floor
+                    Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
+
+                    //check to see if there is already an enemy there
+                    foreach (Collider hit in hits)
                     {
-                        continue;
+                        if (hit.CompareTag("Ground"))
+                        {
+                            continue;
+                        }
+                        else if (hit.CompareTag("Enemy"))
+                        {
+                            Debug.Log("can't spawn here");
+                            blocked = true;
+                            break;
+                        }
                     }
-                    else if (hit.CompareTag("Enemy"))
+
+                    if (!blocked && !Physics.CheckSphere(baseSpawn1, radius))
                     {
-                        // Debug.Log("can't spawn here");
-                        // attempts++;
-                        Debug.Log("resetting baseSpawn2");
-                        baseSpawn1 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
+                        //Good position, exit loop
+                        break;
                     }
+
+                    //reset the position
+                    attempts++;
+                    baseSpawn1 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
                 }
-                // }
 
                 //spawn the enemy at spawn row 2
                 Instantiate(enemyToSpawn, baseSpawn2, enemyToSpawn.transform.rotation);
@@ -134,26 +158,42 @@ public class SpawnQueue : MonoBehaviour
                 //set the random spawn spot
                 baseSpawn3 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
                 float radius = 3f;
-                // int maxAttempts = 100;
-                // int attempts = 0;
+                int maxAttempts = 10;
+                int attempts = 0;
 
-                //check to make sure it isnt colliding with the floor
-                Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
 
-                //check to see if there is already an enemy there
-                foreach (Collider hit in hits)
+                //check to make sure the spawn point is not inside of another enemy
+                while (attempts < maxAttempts)
                 {
-                    if (hit.CompareTag("Ground"))
+                    bool blocked = false;
+
+                    //check to make sure it isnt colliding with the floor
+                    Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
+
+                    //check to see if there is already an enemy there
+                    foreach (Collider hit in hits)
                     {
-                        continue;
+                        if (hit.CompareTag("Ground"))
+                        {
+                            continue;
+                        }
+                        else if (hit.CompareTag("Enemy"))
+                        {
+                            Debug.Log("can't spawn here");
+                            blocked = true;
+                            break;
+                        }
                     }
-                    else if (hit.CompareTag("Enemy"))
+
+                    if (!blocked)
                     {
-                        // Debug.Log("can't spawn here");
-                        // attempts++;
-                        Debug.Log("resetting baseSpawn3");
-                        baseSpawn1 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
+                        //Good position, exit loop
+                        break;
                     }
+
+                    //reset the position
+                    attempts++;
+                    baseSpawn1 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
                 }
 
                 //spawn the enemy at spawn row 3
@@ -173,8 +213,6 @@ public class SpawnQueue : MonoBehaviour
             {
                 Debug.LogError("spawnBuffer of wave " + currentWave + " is not set");
             }
-
-            // Debug.Log("got end of for loop at current wave " + currentWave + " index " + i);
         }
 
         // Debug.Log("got out of the for loop and thisWave == " + thisWave);
