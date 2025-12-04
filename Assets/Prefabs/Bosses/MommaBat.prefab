@@ -163,6 +163,7 @@ MonoBehaviour:
   lastHP: 0
   hpPercent: 0
   healthDisplay: {fileID: 5853543825536713113}
+  hw: {fileID: 4705524346880539504}
   flyInDuration: 5
   bat: {fileID: 1266298897184747402, guid: f4d8ec6068bef7c40b1791945319baf4, type: 3}
   distanceInFront: 10
@@ -803,6 +804,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
   m_PrefabInstance: {fileID: 5632239907066918805}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4705524346880539504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+  m_PrefabInstance: {fileID: 5632239907066918805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3af8159799b26d45b7c0906cd1f96fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7796445224801064804
 PrefabInstance:
   m_ObjectHideFlags: 0

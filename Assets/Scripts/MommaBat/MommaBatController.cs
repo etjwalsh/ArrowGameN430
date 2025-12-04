@@ -16,6 +16,7 @@ public class MommaBatController : MonoBehaviour
     public int lastHP;
     public float hpPercent;
     [SerializeField] private hpBar healthDisplay;
+    [SerializeField] private hitWheel hw;
     private bool canBeHit = false;
 
     //for flying in
@@ -40,6 +41,9 @@ public class MommaBatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hw.damage = damage;
+        hw.hitRate = attackRate;
+
         targetPosition = new Vector3(35, 30, 50);
         Vector3 pos = new Vector3(35, 90, 450);
         transform.position = pos;
