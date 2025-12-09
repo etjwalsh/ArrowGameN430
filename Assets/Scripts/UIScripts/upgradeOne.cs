@@ -8,7 +8,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     [Header("UI References")]
     public Button upgradeButton;
-    
+
     [Header("Tree Connections")]
     [SerializeField] private List<GameObject> nextUpgrades = new List<GameObject>();
     [SerializeField] private GameObject upgradeLines;
@@ -22,7 +22,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     [Header("Tooltip Info")]
     [SerializeField] private string title;
-    [TextArea] [SerializeField] private string description; 
+    [TextArea][SerializeField] private string description;
 
     private int currentLevel = 0;
     private float currentCost;
@@ -42,7 +42,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             GameManager.instance.playerCoins -= currentCost;
             currentLevel++;
 
-            GameManager.instance.SetUpgradeLevel(upgradeID, currentLevel); 
+            GameManager.instance.SetUpgradeLevel(upgradeID, currentLevel);
             upgradeEffect.Invoke();
 
             CalculateCurrentCost();
@@ -56,7 +56,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void CalculateCurrentCost()
     {
-        currentCost = baseCost * Mathf.Pow(costMultiplier, currentLevel);
+        currentCost = baseCost * (costMultiplier * currentLevel);
     }
 
     private void UpdateVisuals()
@@ -67,7 +67,6 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 foreach (GameObject nextUpgrade in nextUpgrades)
                 {
-                    Debug.Log("Unlocking next upgrade: " + nextUpgrade.GetComponent<UpgradeOne>().upgradeID);   
                     nextUpgrade.transform.Find("Button").gameObject.SetActive(true);
                 }
             }
@@ -79,7 +78,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (currentLevel >= maxLevel)
         {
             upgradeButton.interactable = false;
-            if (upgradeButton.image != null) upgradeButton.image.color = Color.green; 
+            if (upgradeButton.image != null) upgradeButton.image.color = Color.green;
         }
     }
 
@@ -87,7 +86,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         return $"{description}\nLevel: {currentLevel}/{maxLevel}";
     }
-    
+
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         tooltipManager._instance.SetandShow(title, GetTooltipText(), currentCost, GetComponent<RectTransform>());
