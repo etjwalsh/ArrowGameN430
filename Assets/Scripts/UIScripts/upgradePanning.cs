@@ -41,6 +41,7 @@ public class UIPanDrag : MonoBehaviour
         {
             float zoom = Mathf.Clamp(rectTransform.localScale.x + scroll, 0.5f, 3f);
             rectTransform.localScale = Vector3.one * zoom;
+
         }
 
     }

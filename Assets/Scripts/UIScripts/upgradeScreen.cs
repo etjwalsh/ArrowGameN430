@@ -1,66 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class upgradeScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = true;
+        StartCoroutine(wait());
+    }
 
-        List<string> upgrades = GameManager.instance.upgrades;
-
-        foreach (string upgrade in upgrades)
+    IEnumerator wait()//waits one frame to ensure all UpgradeOne scripts have initialized
+    {
+        yield return null; 
+        UpgradeOne[] allUpgradeNodes = FindObjectsOfType<UpgradeOne>();
+        foreach (UpgradeOne node in allUpgradeNodes)
         {
-            GameObject upgradeToToggle = GameObject.Find(upgrade);
-            UpgradeOne script = upgradeToToggle.GetComponent<UpgradeOne>();
-            script.obtained = true;
-
+            int savedLevel = GameManager.instance.GetUpgradeLevel(node.upgradeID);
+            node.SetupUpgradeState(savedLevel);
         }
-
-
     }
     
     public void dmgUpgrade(float amount)
     {
-        print(amount);
         GameManager.instance.playerDamage += amount;
     }
-
+    
     public void hpUpgrade(float amount)
     {
-        print(amount);
         GameManager.instance.maxPlayerHealth += amount;
     }
-
-    public void coinAddUpgrade(float amount)
-    {
-        print(amount);
-        GameManager.instance.moreCoins += amount;
-    }
-
-    public void atkSpdUpgrade(float amount)
-    {
-        print(amount);
-
-        //need to implement elsewhere
-        GameManager.instance.powerScale += amount;
-    }
-
-    public void atkVeloUpgrade(float amount)
-    {
-        print(amount);
-
-        //need to implement elsewhere
-        GameManager.instance.maxPower += amount;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     
+    public void coinAddUpgrade(float totalAmount)
+    {
+        GameManager.instance.moreCoins += totalAmount;
+    }
 
+    public void atkSpdUpgrade(float totalAmount)
+    {
+        GameManager.instance.powerScale += totalAmount;
+    }
+
+    public void atkVeloUpgrade(float totalAmount)
+    {
+        GameManager.instance.maxPower += totalAmount;
+    }
 }

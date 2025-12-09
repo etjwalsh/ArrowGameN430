@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public float coinMult = 1; //coin mult from upgrades
     public float moreCoins = 0; //addative coin amount from upgrades
     public float difficulty = 1; //overall game difficulty
-    public List<string> upgrades = new(); //list for upgrade names
+    public Dictionary<string, int> upgradeLevels = new Dictionary<string, int>(); //list for upgrade names
     public int currentSceneIndex = 0;
 
     //singleton pattern
@@ -87,5 +87,20 @@ public class GameManager : MonoBehaviour
     public void addCoins(float amount)
     {
         playerCoins += (amount * coinMult) + moreCoins;
+    }
+
+    public int GetUpgradeLevel(string upgradeID)
+    {
+        if (upgradeLevels.ContainsKey(upgradeID))
+            return upgradeLevels[upgradeID];
+        return 0;
+    }
+
+    public void SetUpgradeLevel(string upgradeID, int level)
+    {
+        if (upgradeLevels.ContainsKey(upgradeID))
+            upgradeLevels[upgradeID] = level;
+        else
+            upgradeLevels.Add(upgradeID, level);
     }
 }

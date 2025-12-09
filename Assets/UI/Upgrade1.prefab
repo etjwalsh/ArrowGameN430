@@ -329,13 +329,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4277bdac1e8fbff42b8f4c93f63b24db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 251007133930172003}
+  upgradeButton: {fileID: 251007133930172003}
   nextUpgrades:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   upgradeLines: {fileID: 1890987718851554964}
+  upgradeID: Upgrade1
+  maxLevel: 5
+  baseCost: 100
+  costMultiplier: 1.5
   upgradeEffect:
     m_PersistentCalls:
       m_Calls:
@@ -351,11 +355,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cost: 10
   title: 
   description: 
-  obtained: 0
-  off: 0
 --- !u!50 &1232332887104005816
 Rigidbody2D:
   serializedVersion: 4
