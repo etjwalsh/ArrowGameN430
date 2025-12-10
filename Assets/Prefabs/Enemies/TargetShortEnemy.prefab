@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 385698862149655994}
   - component: {fileID: 1947793296914305277}
   - component: {fileID: 5891664845225798777}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 8394240185814579945}
   - component: {fileID: 8414407413021956415}
   - component: {fileID: 7382472364296675352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TargetShortEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 1972985505919632871, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_Color.r
       value: 0.4666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743054478254661790, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_Pivot.x
@@ -281,9 +285,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7201294887710923043, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8453732002283961843, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453732002283961843, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -354,9 +366,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1552838680201586129, guid: f5867f2fee62ea74c8c5d704f214eb39, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f5867f2fee62ea74c8c5d704f214eb39, type: 3}
       propertyPath: m_Name
       value: TargetShort_Unwrapped_V3_AAA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5867f2fee62ea74c8c5d704f214eb39, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5824389496788114219, guid: f5867f2fee62ea74c8c5d704f214eb39, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -384,6 +404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hitTimerWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 649355629735143525, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: damage
       value: 5
@@ -391,6 +415,14 @@ PrefabInstance:
     - target: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: hitTimer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492860245919379394, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387141841819002596, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_Pivot.x

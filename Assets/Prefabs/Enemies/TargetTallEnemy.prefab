@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6486550844708475250}
   - component: {fileID: 7440933796314796577}
   - component: {fileID: 5922186831354744573}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7302167876958384601}
   - component: {fileID: 1218587235624623406}
   - component: {fileID: 8592264584826058063}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TargetTallEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -238,9 +238,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7055314595994053585, guid: 0061bc8f3b7ecde428cd1995a4e230e9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0061bc8f3b7ecde428cd1995a4e230e9, type: 3}
       propertyPath: m_Name
       value: TargetTall_Unwrapped_V3_AAA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0061bc8f3b7ecde428cd1995a4e230e9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6765898751699757760, guid: 0061bc8f3b7ecde428cd1995a4e230e9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -268,9 +276,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: hitTimerWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 649355629735143525, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1109254592228789477, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492860245919379394, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387141841819002596, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7471553665647829114, guid: d93dc971118ae6042a646ebb8003e21b, type: 3}
       propertyPath: m_Pivot.x
@@ -409,6 +429,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.4666667
       objectReference: {fileID: 0}
+    - target: {fileID: 2743054478254661790, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5388131381339155087, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -493,9 +517,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7201294887710923043, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8453732002283961843, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453732002283961843, guid: 5ddfdce2bdf783447994ebe535ad0d24, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

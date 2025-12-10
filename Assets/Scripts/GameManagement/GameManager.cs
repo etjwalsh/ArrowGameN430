@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public float difficulty = 1; //overall game difficulty
     public Dictionary<string, int> upgradeLevels = new Dictionary<string, int>(); //list for upgrade names
     public int currentSceneIndex = 0;
+    public int multiShotLevel = 0;
+
 
     //singleton pattern
     private static GameManager _instance;

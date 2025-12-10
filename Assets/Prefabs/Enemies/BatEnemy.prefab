@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5910220970797014818}
   - component: {fileID: 7804007870407896042}
   - component: {fileID: 4257247847488812705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BatEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -226,6 +226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5991712972631833874}
     m_Modifications:
+    - target: {fileID: -8417653104971421781, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -8128451150976911545, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -282,6 +286,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bat_Animated_AAA_V2
       objectReference: {fileID: 0}
+    - target: {fileID: -5187156907246912380, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5180078853413727524, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4800475857923515541, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4646562650801506204, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4405879876315021410, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -4214898330942547936, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.9503084
@@ -306,6 +330,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: -1775601135960677185, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1031909302792534291, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -742566559057751902, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.24626096
@@ -321,6 +353,26 @@ PrefabInstance:
     - target: {fileID: -742566559057751902, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.06598543
+      objectReference: {fileID: 0}
+    - target: {fileID: 525277687295270239, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 740322427934305128, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450893239303946262, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944739396299951052, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646480537707207455, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7766887815121312776, guid: b6702aa027d63b240801ec1b031fa2c0, type: 3}
       propertyPath: m_Materials.Array.data[0]

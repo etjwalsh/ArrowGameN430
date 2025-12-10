@@ -20,8 +20,7 @@ public class Shooting : MonoBehaviour
     private Rigidbody rbArrow;
 
     //for multishot
-    public float spreadAngle = 15f;
-    public int multiShotLevel = 1;
+    public float arrowSpacing = 0.01f;
 
     //variables for raycasting
     private Ray ray;
@@ -152,8 +151,8 @@ public class Shooting : MonoBehaviour
     {
         Vector3 baseDirection = (target - rbArrow.transform.position).normalized;
 
-        // Calculate the starting angle offset to center the spread
-        float startAngle = -(spreadAngle * (count - 1)) / 2f;
+        //calculate the starting angle offset to center the spread
+        float startOffset = -(arrowSpacing * (count - 1)) / 2f;
 
         for (int i = 0; i < count; i++)
         {
@@ -180,18 +179,19 @@ public class Shooting : MonoBehaviour
             }
 
             //calculate the angle for this arrow
-            float currentAngle = startAngle + (spreadAngle * i);
+            float currentOffset = startOffset + (arrowSpacing * i);
 
-            //rotate the direction around the up axis (for horizontal spread)
-            Vector3 spreadDirection = Quaternion.AngleAxis(currentAngle, bow.transform.up) * baseDirection;
+            Vector3 rightVector = Vector3.Cross(baseDirection, Vector3.up).normalized;
+            Vector3 offsetPosition = currentRb.transform.position + (rightVector * currentOffset);
+            currentRb.transform.position = offsetPosition;
 
             //Set arrow properties
             currentArrowScript.canBeDestroyed = true;
-            currentRb.transform.rotation = Quaternion.LookRotation(spreadDirection);
-            currentRb.velocity = spreadDirection * p;
+            currentRb.transform.rotation = Quaternion.LookRotation(baseDirection);
+            currentRb.velocity = baseDirection * p;
             currentRb.useGravity = true;
 
-            Debug.DrawLine(currentRb.position, currentRb.position + spreadDirection * 50f, Color.green, 2.5f);
+            Debug.DrawLine(currentRb.position, currentRb.position + baseDirection * 50f, Color.green, 2.5f);
         }
 
         //reset all values after shooting
@@ -201,7 +201,7 @@ public class Shooting : MonoBehaviour
     private int GetArrowCount()
     {
         // Return arrow count based on upgrade level
-        switch (multiShotLevel)
+        switch (GameManager.instance.multiShotLevel)
         {
             case 0:
                 return 1; // No upgrade = 1 arrow
@@ -209,6 +209,10 @@ public class Shooting : MonoBehaviour
                 return 2; // Level 1 = 2 arrows
             case 2:
                 return 3; // Level 2 = 3 arrows
+            case 3:
+                return 4;
+            case 4:
+                return 5;
             default:
                 return 1;
         }
