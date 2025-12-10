@@ -217,13 +217,27 @@ public class SpawnQueue : MonoBehaviour
             }
         }
 
-        // Debug.Log("got out of the for loop and thisWave == " + thisWave);
-        //take some time between waves
-        if (thisWave.waveBuffer != -1) //make sure that the wave buffer is actually set
+        //after all enemies in the wave have been spawned, wait for the wave buffer time before starting the next wave
+        if (!thisWave.endOfSpawns && enemySpawn.Count > 0)
         {
-            yield return new WaitForSeconds(thisWave.waveBuffer);
+            // Set the full buffer time
+            float remainingBuffer = thisWave.waveBuffer;
+            if (remainingBuffer > 0) 
+            {       
+                // Loop that counts down the buffer time
+                while (remainingBuffer > 0)
+                {
+                    // Check if all enemies are defeated
+                    if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                    {
+                        break;
+                    }
+                    remainingBuffer -= Time.deltaTime;
+                    yield return null; 
+                }
+            }
         }
-        else //give an error if it's not set properly
+        else if (thisWave.waveBuffer == -1) //give an error if it's not set properly
         {
             Debug.LogError("spawnBuffer of wave " + thisWave + " is not set");
         }

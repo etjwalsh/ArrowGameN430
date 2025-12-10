@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 222887483177e034aa2ebf3c10b894cb, type: 3}
-  m_Name: fw 5
+  m_Name: fw 7
   m_EditorClassIdentifier: 
   enemiesToSpawn:
-  - {fileID: 8886590991867022183, guid: 6349e33a7ef594e408b009d709936881, type: 3}
   - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
+  - {fileID: 4461568968992344930, guid: d3b4daee4a561ca4fa668d5b762699ed, type: 3}
   - {fileID: 4461568968992344930, guid: bf322d19d86d81548883a6342a8552fb, type: 3}
   spawnBuffer: 1
   waveBuffer: 6
