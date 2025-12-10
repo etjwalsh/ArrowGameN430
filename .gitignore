@@ -97,3 +97,15 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Prefabs/Enemies/Goblin 1.prefab
+Assets/Prefabs/Enemies/Goblin 1.prefab.meta
+Assets/Prefabs/Enemies/Goblin 2.prefab
+Assets/Prefabs/Enemies/Goblin 2.prefab.meta
+Assets/Prefabs/Enemies/Goblin 3.prefab
+Assets/Prefabs/Enemies/Goblin 3.prefab.meta
+Assets/Prefabs/Enemies/GoblinBlue.prefab
+Assets/Prefabs/Enemies/GoblinBlue.prefab.meta
+Assets/Prefabs/Enemies/GoblinPurple.prefab
+Assets/Prefabs/Enemies/GoblinPurple.prefab.meta
+Assets/Prefabs/Enemies/GoblinRed.prefab
+Assets/Prefabs/Enemies/GoblinRed.prefab.meta

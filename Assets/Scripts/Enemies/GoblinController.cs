@@ -12,10 +12,8 @@ public class GoblinController : MonoBehaviour
     [SerializeField] public float damage;
     [SerializeField]  public float attackRate = 4f;
     public float goblinMaxHP => goblinHPScaling * GameManager.instance.difficulty;
-    private float goblinHP;
+    public float goblinHP;
     public float hpPercent;
-    public int min = 1;
-    public int max = 10;
 
     [Header("UI")]
     [SerializeField] private hpBar healthDisplay;

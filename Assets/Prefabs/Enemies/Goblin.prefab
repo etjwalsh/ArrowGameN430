@@ -74,8 +74,6 @@ MonoBehaviour:
   damage: 15
   attackRate: 3
   hpPercent: 0
-  min: 1
-  max: 10
   healthDisplay: {fileID: 8848744247639734482}
   hw: {fileID: 5763053192763478346}
 --- !u!1001 &289681089684792539
