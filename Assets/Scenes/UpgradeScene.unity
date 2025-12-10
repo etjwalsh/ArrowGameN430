@@ -3762,7 +3762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: description
-      value: You now shoot +1 more arrow
+      value: Increases arrow count by +1
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: costMultiplier
