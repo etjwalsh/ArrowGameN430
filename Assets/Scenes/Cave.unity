@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bcc991d4846374f8c80187aa490671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultySetting: 1
+  difficultySetting: 4
 --- !u!1001 &235393650
 PrefabInstance:
   m_ObjectHideFlags: 0
