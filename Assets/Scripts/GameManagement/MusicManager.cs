@@ -1,12 +1,14 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class MusicManager : MonoBehaviour
 {
     public AudioSource music;
     public List<AudioClip> musicTracks;
     private bool started = false;
+    private bool menuStarted = false;
 
     void Awake()
     {
@@ -24,10 +26,15 @@ public class MusicManager : MonoBehaviour
             music.volume = 1.0f;
         }
 
-        if (scene.name == "MainMenu")
+        if (scene.name == "MainMenu" || scene.name == "Intro")
         {
             music.clip = musicTracks[0];
-            music.Play();
+
+            if(!menuStarted)
+            {
+                music.Play();
+                menuStarted = true;
+            }
         }
         else
         {
