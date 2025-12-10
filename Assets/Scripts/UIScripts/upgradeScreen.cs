@@ -46,4 +46,25 @@ public class upgradeScreen : MonoBehaviour
     {
         GameManager.instance.maxPower += totalAmount;
     }
+    public void multiShotUpgrade(int level)
+    {
+        GameManager.instance.multiShotLevel = level;
+        GameManager.instance.maxArrows = 1 + level;
+    }
+    public void coinMultUpgrade(float multAmount)
+    {
+        GameManager.instance.coinMult += multAmount;
+    }
+    public void dmgMultUpgrade(float multAmount)
+    {
+        GameManager.instance.dmgMultiplier += multAmount;
+    }
+    public void defUpgrade(float amount)
+    {
+        GameManager.instance.defence += amount;
+    }
+    public void healthMultUpgrade(float amount)
+    {
+        GameManager.instance.healthMult += amount/100f;
+    }
 }

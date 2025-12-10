@@ -87,7 +87,7 @@ public class Shooting : MonoBehaviour
                 }
 
                 //set this arrow's damage amount by mutliplying the powermodifier by player dmg, ie. a half charged shot will do 50% of the expected dmg
-                arrowScript.damage = GameManager.instance.playerDamage * (power / 100);
+                arrowScript.damage = GameManager.instance.playerDamage * GameManager.instance.dmgMultiplier * (power / 100);
             }
 
             if (Input.GetMouseButtonUp(0)) //no longer holding down the arrow

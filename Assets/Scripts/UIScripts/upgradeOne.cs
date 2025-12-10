@@ -17,7 +17,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] public string upgradeID; // Unique ID (e.g., "Dmg_Node_1")
     [SerializeField] private int maxLevel = 5;
     [SerializeField] private float baseCost = 100;
-    [SerializeField] private float costMultiplier = 1.5f; // Cost scales up per level
+    [SerializeField] private float costAdd = 100; // Cost scales up per level
     [SerializeField] private UnityEvent upgradeEffect;
 
     [Header("Tooltip Info")]
@@ -56,7 +56,7 @@ public class UpgradeOne : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void CalculateCurrentCost()
     {
-        currentCost = baseCost * (costMultiplier * currentLevel);
+        currentCost = baseCost + (costAdd * currentLevel);
     }
 
     private void UpdateVisuals()

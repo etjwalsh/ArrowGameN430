@@ -5,6 +5,7 @@ using UnityEngine;
 public class sceneHelperScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float difficultySetting = 1f;
     void Start()
     {
         if (GameManager.instance == null)
@@ -12,6 +13,7 @@ public class sceneHelperScript : MonoBehaviour
             return;
         }
         GameManager.instance.currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        GameManager.instance.difficulty = difficultySetting;
     }
 
     // Update is called once per frame

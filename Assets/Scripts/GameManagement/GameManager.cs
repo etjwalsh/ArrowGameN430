@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     public float playerHealth = 100; //how much HP the player has
     public float maxPlayerHealth = 25; //max amount of HP the player can have
     public float playerDamage = 100; //how much damage the player does  
+    public float dmgMultiplier = 1; //damage multiplier from upgrades
     public int maxArrows = 1; //how many arrows the player can shoot at once
+    public float defence = 0; //player defence stat
+    public float healthMult = 1; //health multiplier from upgrades
     public float powerScale = 1; //how quickly the arrow draws back
     public float maxPower = 100; //max bow power
     public float playerCoins = 0; //Coins
