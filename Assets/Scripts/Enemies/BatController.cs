@@ -17,7 +17,7 @@ public class BatController : MonoBehaviour
     private float batHP;
     private float hpPercent;
     private int min = 5;
-    private int max = 15;
+    private int max = 10;
     [Header("UI")]
     [SerializeField] private hpBar healthDisplay;
     [SerializeField] private hitWheel hw;
