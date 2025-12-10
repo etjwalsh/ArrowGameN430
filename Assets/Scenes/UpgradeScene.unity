@@ -775,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: nextUpgrades.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: nextUpgrades.Array.data[0]
@@ -2205,7 +2205,7 @@ PrefabInstance:
       objectReference: {fileID: 207272530}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2217,11 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5643580444504919038, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: upgradeEffect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 100
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7421229675196757835, guid: 9240bc8d92c95ce428c2f9e314bca6d2, type: 3}
       propertyPath: m_SizeDelta.x

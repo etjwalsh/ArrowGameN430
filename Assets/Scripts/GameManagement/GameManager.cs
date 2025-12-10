@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     //keeps track of the main stats for the game
     //these will be the stats that the upgrades mess with
     public float playerHealth = 100; //how much HP the player has
+    public float playerMaxHealthPre = 100; //base max HP before multipliers
     public float maxPlayerHealth = 25; //max amount of HP the player can have
     public float playerDamage = 100; //how much damage the player does  
     public float dmgMultiplier = 1; //damage multiplier from upgrades

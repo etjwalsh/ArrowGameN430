@@ -29,7 +29,8 @@ public class upgradeScreen : MonoBehaviour
     
     public void hpUpgrade(float amount)
     {
-        GameManager.instance.maxPlayerHealth += amount;
+        GameManager.instance.playerMaxHealthPre += amount;
+        GameManager.instance.maxPlayerHealth = GameManager.instance.playerMaxHealthPre * GameManager.instance.healthMult;
     }
     
     public void coinAddUpgrade(float totalAmount)
@@ -65,6 +66,7 @@ public class upgradeScreen : MonoBehaviour
     }
     public void healthMultUpgrade(float amount)
     {
-        GameManager.instance.healthMult += amount/100f;
+        GameManager.instance.healthMult += amount;
+        GameManager.instance.maxPlayerHealth = GameManager.instance.playerMaxHealthPre * GameManager.instance.healthMult;
     }
 }
