@@ -35,7 +35,7 @@ public class SlimeController : MonoBehaviour
     //animation stuff
     private Vector3 originalScale;
     private Vector3 startPosition;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
     private Rigidbody rb;
     private float gravityMultiplier = 2.0f;
 
