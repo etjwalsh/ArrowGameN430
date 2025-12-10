@@ -14,7 +14,7 @@ public class SlimeController : MonoBehaviour
     [SerializeField] public float value;
     [SerializeField] public float slimeHPScaling = 200;
     [SerializeField] public float damage;
-    [SerializeField]  public float attackRate = 4f;
+    [SerializeField] public float attackRate = 4f;
     public float slimeMaxHP => slimeHPScaling * GameManager.instance.difficulty;
     public float slimeHP;
     public float hpPercent;
@@ -53,6 +53,9 @@ public class SlimeController : MonoBehaviour
             rb = gameObject.AddComponent<Rigidbody>();
         }
 
+        //ignore collision with other enemies
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Enemy"));
+
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 
@@ -85,6 +88,7 @@ public class SlimeController : MonoBehaviour
         {
             isGrounded = true;
         }
+
     }
 
     void Update()

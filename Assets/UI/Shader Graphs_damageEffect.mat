@@ -46,7 +46,7 @@ Material:
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
     - _VDarkening: 1
-    - _Vradius: 0.7035541
+    - _Vradius: 0.58676463
     - _Vsoftness: 1
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0.4666667}

@@ -82,6 +82,7 @@ public class SpawnQueue : MonoBehaviour
                     //check to see if there is already an enemy there
                     foreach (Collider hit in hits)
                     {
+                        Debug.Log("hit: " + hit);
                         if (hit.CompareTag("Ground"))
                         {
                             continue;
@@ -122,7 +123,7 @@ public class SpawnQueue : MonoBehaviour
                     bool blocked = false;
 
                     //check to make sure it isnt colliding with the floor
-                    Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
+                    Collider[] hits = Physics.OverlapSphere(baseSpawn2, radius);
 
                     //check to see if there is already an enemy there
                     foreach (Collider hit in hits)
@@ -139,7 +140,7 @@ public class SpawnQueue : MonoBehaviour
                         }
                     }
 
-                    if (!blocked && !Physics.CheckSphere(baseSpawn1, radius))
+                    if (!blocked && !Physics.CheckSphere(baseSpawn2, radius))
                     {
                         //Good position, exit loop
                         break;
@@ -147,7 +148,7 @@ public class SpawnQueue : MonoBehaviour
 
                     //reset the position
                     attempts++;
-                    baseSpawn1 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
+                    baseSpawn2 = new Vector3(Random.Range(-15, 15), 7.0f, 27);
                 }
 
                 //spawn the enemy at spawn row 2
@@ -168,7 +169,7 @@ public class SpawnQueue : MonoBehaviour
                     bool blocked = false;
 
                     //check to make sure it isnt colliding with the floor
-                    Collider[] hits = Physics.OverlapSphere(baseSpawn1, radius);
+                    Collider[] hits = Physics.OverlapSphere(baseSpawn3, radius);
 
                     //check to see if there is already an enemy there
                     foreach (Collider hit in hits)
@@ -193,7 +194,8 @@ public class SpawnQueue : MonoBehaviour
 
                     //reset the position
                     attempts++;
-                    baseSpawn1 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
+                    baseSpawn3 = new Vector3(Random.Range(-18, 16), 10.0f, 47);
+                    Debug.Log("got to the end of the while loop!!");
                 }
 
                 //spawn the enemy at spawn row 3
