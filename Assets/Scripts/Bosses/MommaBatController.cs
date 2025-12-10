@@ -44,7 +44,7 @@ public class MommaBatController : MonoBehaviour
         hw.damage = damage;
         hw.hitRate = attackRate;
 
-        targetPosition = new Vector3(35, 30, 50);
+        targetPosition = new Vector3(17, 16, 27);
         Vector3 pos = new Vector3(35, 90, 450);
         transform.position = pos;
 
@@ -72,7 +72,7 @@ public class MommaBatController : MonoBehaviour
 
             //change to the end of the game scene!
             Destroy(gameObject);
-            SceneManager.LoadScene("Mountain");
+            SceneManager.LoadScene("End");
         }
     }
 
@@ -193,7 +193,7 @@ public class MommaBatController : MonoBehaviour
         for (int i = 0; i < numBats; i++)
         {
             //get spawn position
-            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             float radius = 3f;
             int maxAttempts = 10;
             int attempts = 0;
@@ -202,7 +202,7 @@ public class MommaBatController : MonoBehaviour
             {
                 Debug.Log("can't spawn here");
                 attempts++;
-                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+                spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             }
 
             //spawn in a line at spawn position
@@ -218,7 +218,7 @@ public class MommaBatController : MonoBehaviour
         for (int i = 0; i < numBats; i++)
         {
             //get spawn position
-            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             float radius = 3f;
             int maxAttempts = 10;
             int attempts = 0;
@@ -227,7 +227,7 @@ public class MommaBatController : MonoBehaviour
             {
                 Debug.Log("can't spawn here");
                 attempts++;
-                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+                spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             }
 
             //spawn in a line at spawn position
@@ -243,7 +243,7 @@ public class MommaBatController : MonoBehaviour
         for (int i = 0; i < numBats; i++)
         {
             //get spawn position
-            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(20, 40), transform.position.y - 20, transform.position.z - 35);
+            Vector3 spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             float radius = 3f;
             int maxAttempts = 10;
             int attempts = 0;
@@ -252,7 +252,7 @@ public class MommaBatController : MonoBehaviour
             {
                 Debug.Log("can't spawn here");
                 attempts++;
-                spawnPos = new Vector3(transform.position.x - Random.Range(20, 50), transform.position.y - 20, transform.position.z - 35);
+                spawnPos = new Vector3(transform.position.x - Random.Range(-4, 36), transform.position.y - 10, transform.position.z - 10);
             }
 
             //spawn in a line at spawn position

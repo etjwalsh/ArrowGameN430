@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            playerCoins += 100;
+            playerCoins += 100000;
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
